@@ -2,50 +2,64 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { useLanguage } from '../contexts/LanguageContext'
 
-const FAQPage: React.FC = () => {
+export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const { t } = useLanguage()
 
   const faqs = [
     {
-      question: 'Jak wygląda pierwsza sesja treningowa?',
+      question: 'Jak zacząć przygodę z trenerem personalnym?',
       answer: 'Pierwsza sesja rozpoczyna się od szczegółowego wywiadu dotyczącego Twoich celów, doświadczenia treningowego i stanu zdrowia. Następnie przeprowadzam analizę składu ciała i testy kondycyjne. Na tej podstawie tworzę indywidualny plan treningowy i omawiamy dalsze kroki.'
     },
     {
-      question: 'Ile trwa jedna sesja treningowa?',
-      answer: 'Standardowa sesja treningowa trwa 60 minut. W tym czasie mieszczą się rozgrzewka, główna część treningowa oraz stretching. W zależności od potrzeb, sesja może być wydłużona do 90 minut.'
-    },
-    {
-      question: 'Czy mogę anulować lub przełożyć trening?',
-      answer: 'Tak, możesz anulować lub przełożyć trening z 24-godzinnym wyprzedzeniem bez dodatkowych opłat. Anulowanie w krótszym czasie może wiązać się z opłatą za sesję.'
-    },
-    {
-      question: 'Czy dostaję plan żywieniowy w ramach treningu?',
-      answer: 'Podstawowe wskazówki żywieniowe są zawsze częścią treningu personalnego. Szczegółowy plan żywieniowy jest dostępny w pakietach miesięcznych lub jako dodatkowa usługa.'
-    },
-    {
-      question: 'Jakie efekty mogę osiągnąć i w jakim czasie?',
-      answer: 'Pierwsze efekty widoczne są już po 2-3 tygodniach regularnych treningów. Znaczące zmiany w sylwetce i kondycji następują po 6-8 tygodniach. Tempo postępów zależy od regularności, diety i indywidualnych predyspozycji.'
-    },
-    {
-      question: 'Czy treningi są odpowiednie dla początkujących?',
-      answer: 'Absolutnie! Specjalizuję się w pracy z osobami na każdym poziomie zaawansowania. Dla początkujących przygotowuję szczególnie bezpieczne i stopniowo progresywne programy treningowe.'
-    },
-    {
-      question: 'Co powinienem zabrać na trening?',
-      answer: 'Potrzebujesz wygodnego stroju sportowego, butów treningowych, ręcznika i butelki z wodą. Jeśli masz własne rękawiczki treningowe, możesz je zabrać, ale nie jest to konieczne.'
-    },
-    {
-      question: 'Czy mogę trenować z kontuzją?',
-      answer: 'To zależy od rodzaju i stopnia kontuzji. Zawsze wymagam zaświadczenia lekarskiego o braku przeciwwskazań do aktywności fizycznej. Mogę dostosować trening do Twoich ograniczeń zdrowotnych.'
-    },
-    {
-      question: 'Jak często powinienem trenować?',
+      question: 'Ile razy w tygodniu ćwiczyć z trenerem personalnym?',
       answer: 'Dla początkujących polecam 2-3 treningi w tygodniu. Osoby bardziej zaawansowane mogą trenować 3-4 razy w tygodniu. Częstotliwość zależy od celów, kondycji i możliwości regeneracji.'
     },
     {
-      question: 'Czy oferujesz treningi online?',
-      answer: 'Tak, oferuję treningi online oraz coaching zdalny. To doskonała opcja dla osób, które nie mogą regularnie przyjeżdżać na siłownię lub preferują trening w domu.'
+      question: 'Czego mogę się spodziewać korzystając z usług trenera personalnego?',
+      answer: 'Możesz oczekiwać profesjonalnego podejścia, indywidualnego planu treningowego, motywacji, bezpiecznych ćwiczeń oraz regularnego monitoringu postępów. Zapewniam również podstawowe wskazówki żywieniowe.'
+    },
+    {
+      question: 'Jak wygląda konsultacja z trenerem personalnym?',
+      answer: 'Konsultacja obejmuje wywiad zdrowotny, analizę celów, pomiary ciała, testy kondycyjne oraz omówienie możliwości treningowych. Na tej podstawie tworzę plan dopasowany do Twoich potrzeb.'
+    },
+    {
+      question: 'Ile treningów personalnych potrzebuję?',
+      answer: 'Zależne od celów - dla podstawowej poprawy kondycji wystarczy 8-12 sesji, dla znaczących zmian sylwetki 20-30 treningów. Regularne treningi przez 3-6 miesięcy dają najlepsze rezultaty.'
+    },
+    {
+      question: 'Po czym poznać dobrego trenera personalnego?',
+      answer: 'Dobry trener ma certyfikaty, doświadczenie, pozytywne opinie klientów, indywidualne podejście, umiejętność motywowania i dostosowywania treningów do możliwości klienta.'
+    },
+    {
+      question: 'Gdzie odbywają się treningi personalne?',
+      answer: 'Treningi odbywają się w profesjonalnej siłowni przy ul. gen. Augusta Emila Fieldorfa Nila 41 w Warszawie. Oferuję również treningi online oraz w domu klienta.'
+    },
+    {
+      question: 'Czy opłaca się trenować z trenerem personalnym?',
+      answer: 'Tak, trening personalny to inwestycja w zdrowie. Zapewnia szybsze osiągnięcie celów, bezpieczeństwo ćwiczeń, motywację i profesjonalne wsparcie, co jest bardziej efektywne niż samodzielne treningi.'
+    },
+    {
+      question: 'Ile trwa jeden trening i jaki jest jego koszt?',
+      answer: 'Standardowa sesja treningowa trwa 60 minut. Ceny zaczynają się od 120 zł za sesję. Szczegółowy cennik znajdziesz w zakładce Cennik lub skontaktuj się ze mną po indywidualną wycenę.'
+    },
+    {
+      question: 'Jak długo trzeba ćwiczyć z trenerem personalnym?',
+      answer: 'Pierwsze efekty widoczne są po 2-3 tygodniach, znaczące zmiany po 6-8 tygodniach. Dla trwałych rezultatów polecam minimum 3-miesięczny program treningowy.'
+    },
+    {
+      question: 'Jakie są korzyści z treningu personalnego?',
+      answer: 'Główne korzyści to: szybsze osiągnięcie celów, bezpieczne ćwiczenia, indywidualne podejście, motywacja, profesjonalne doradztwo żywieniowe, monitoring postępów i dostosowanie do Twoich możliwości.'
+    },
+    {
+      question: 'Czy muszę mieć skierowanie od lekarza, aby korzystać z trenera personalnego?',
+      answer: 'Skierowanie nie jest wymagane, ale zalecam konsultację lekarską przed rozpoczęciem intensywnych treningów, szczególnie jeśli masz problemy zdrowotne lub kontuzje.'
+    },
+    {
+      question: 'Czy mogę trenować razem z moim mężem/żoną/znajomym?',
+      answer: 'Tak, oferuję treningi w parach lub małych grupach. To doskonała opcja dla par lub przyjaciół, którzy chcą trenować razem. Cena za trening w parze jest korzystniejsza niż za dwie osobne sesje.'
     }
   ]
 
@@ -56,32 +70,32 @@ const FAQPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>FAQ - Często Zadawane Pytania | HyperTraining</title>
-        <meta name="description" content="Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące treningów personalnych, planów żywieniowych i usług HyperTraining." />
-        <meta name="keywords" content="faq trener personalny, pytania trening personalny, informacje fitness warszawa" />
+        <title>{t('faq.title')}</title>
+        <meta name="description" content={t('faq.description')} />
+        <meta name="keywords" content="jak zacząć przygodę z trenerem personalnym, ile razy w tygodniu ćwiczyć z trenerem personalnym, korzyści z treningu personalnego, po czym poznać dobrego trenera personalnego" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900">
         {/* Header */}
-        <section className="bg-primary-600 text-white section-padding">
+        <section className="bg-gray-900 text-white section-padding border-b border-gray-700">
           <div className="container-max text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Często Zadawane Pytania
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                {t('faq.header.title')}
               </h1>
-              <p className="text-xl font-light max-w-2xl mx-auto">
-                Znajdź odpowiedzi na najważniejsze pytania dotyczące treningów personalnych i moich usług
+              <p className="text-xl font-light max-w-2xl mx-auto text-gray-200">
+                {t('faq.header.description')}
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="section-padding">
+        <section className="section-padding bg-gray-800">
           <div className="container-max max-w-4xl">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -96,11 +110,11 @@ const FAQPage: React.FC = () => {
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-lg font-bold text-gray-900 pr-4">
-                      {faq.question}
+                    <h3 className="text-lg font-bold text-white pr-4">
+                      {t(`faq.q${index + 1}`) || faq.question}
                     </h3>
                     <ChevronDownIcon
-                      className={`w-5 h-5 text-gray-500 transition-transform duration-200 flex-shrink-0 ${
+                      className={`w-5 h-5 text-gray-300 transition-transform duration-200 flex-shrink-0 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -115,9 +129,9 @@ const FAQPage: React.FC = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-4 border-t border-gray-200 mt-4">
-                          <p className="text-gray-600 font-light leading-relaxed">
-                            {faq.answer}
+                        <div className="pt-4 border-t border-gray-600 mt-4">
+                          <p className="text-gray-200 font-light leading-relaxed">
+                            {t(`faq.a${index + 1}`) || faq.answer}
                           </p>
                         </div>
                       </motion.div>
@@ -130,26 +144,25 @@ const FAQPage: React.FC = () => {
         </section>
 
         {/* Contact CTA */}
-        <section className="section-padding bg-primary-600 text-white">
+        <section className="section-padding bg-gray-700 text-white">
           <div className="container-max text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl font-bold mb-4">
-                Nie Znalazłeś Odpowiedzi na Swoje Pytanie?
+              <h2 className="text-3xl font-bold mb-4 text-white">
+                {t('faq.cta.title')}
               </h2>
-              <p className="text-xl font-light mb-8 max-w-2xl mx-auto">
-                Skontaktuj się ze mną bezpośrednio. Chętnie odpowiem na wszystkie Twoje pytania 
-                i pomogę wybrać najlepszy plan treningowy.
+              <p className="text-xl font-light mb-8 max-w-2xl mx-auto text-gray-200">
+                {t('faq.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+48123456789" className="btn-secondary">
-                  📞 Zadzwoń Teraz
+                  📞 {t('faq.cta.call')}
                 </a>
-                <a href="mailto:kontakt@hypertraining.pl" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                  📧 Wyślij Email
+                <a href="mailto:kontakt@hypertraining.pl" className="btn-primary">
+                  📧 {t('faq.cta.email')}
                 </a>
               </div>
             </motion.div>
@@ -159,5 +172,3 @@ const FAQPage: React.FC = () => {
     </>
   )
 }
-
-export default FAQPage

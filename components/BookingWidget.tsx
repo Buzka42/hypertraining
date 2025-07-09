@@ -53,12 +53,13 @@ const BookingWidget: React.FC = () => {
     <>
       {/* Floating Button */}
       <motion.button
-        className="fixed bottom-6 right-6 bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg z-50"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white px-6 py-4 rounded-full shadow-2xl z-50 flex items-center space-x-3 backdrop-blur-sm border border-white/10"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(true)}
       >
-        <CalendarIcon className="w-6 h-6" />
+        <CalendarIcon className="w-5 h-5" />
+        <span className="font-semibold text-sm">Wyślij zapytanie o trening</span>
       </motion.button>
 
       {/* Modal */}
@@ -75,14 +76,14 @@ const BookingWidget: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto"
+              className="bg-gray-800/95 backdrop-blur-md rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto border border-gray-700/50"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Umów Trening</h2>
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-2xl font-bold text-white">Umów Trening</h2>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-gray-100 rounded-lg"
+                  className="p-2 hover:bg-gray-700/50 rounded-lg text-gray-400 hover:text-white transition-colors"
                 >
                   <XMarkIcon className="w-5 h-5" />
                 </button>
@@ -99,58 +100,58 @@ const BookingWidget: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dziękuję za zapytanie!</h3>
-                  <p className="text-gray-600 font-light">Skontaktuję się z Tobą tak szybko, jak to możliwe.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Dziękuję za zapytanie!</h3>
+                  <p className="text-gray-300 font-light">Skontaktuję się z Tobą tak szybko, jak to możliwe.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-300 mb-3">
                       Imię i Nazwisko *
                     </label>
                     <input
                       type="text"
                       {...register('name', { required: 'Imię i nazwisko jest wymagane' })}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light text-white placeholder-gray-400 transition-all"
                       placeholder="Wprowadź swoje imię i nazwisko"
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1 font-light">{errors.name.message}</p>
+                      <p className="text-red-400 text-sm mt-2 font-light">{errors.name.message}</p>
                     )}
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-300 mb-3">
                       Numer Telefonu *
                     </label>
                     <input
                       type="tel"
                       {...register('phone', { required: 'Numer telefonu jest wymagany' })}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light"
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light text-white placeholder-gray-400 transition-all"
                       placeholder="+48 123 456 789"
                     />
                     {errors.phone && (
-                      <p className="text-red-500 text-sm mt-1 font-light">{errors.phone.message}</p>
+                      <p className="text-red-400 text-sm mt-2 font-light">{errors.phone.message}</p>
                     )}
                   </div>
 
                   {/* Days */}
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-300 mb-3">
                       Preferowane Dni (możesz wybrać kilka)
                     </label>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-3">
                       {daysOfWeek.map((day) => (
-                        <label key={day} className="flex items-center space-x-2 cursor-pointer">
+                        <label key={day} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-gray-700/30 transition-colors">
                           <input
                             type="checkbox"
                             value={day}
                             {...register('days')}
-                            className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                            className="rounded border-gray-600 text-primary-500 focus:ring-primary-500 bg-gray-700"
                           />
-                          <span className="text-sm font-light">{day}</span>
+                          <span className="text-sm font-light text-gray-300">{day}</span>
                         </label>
                       ))}
                     </div>
@@ -158,19 +159,19 @@ const BookingWidget: React.FC = () => {
 
                   {/* Time Slots */}
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-300 mb-3">
                       Preferowane Godziny (możesz wybrać kilka)
                     </label>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       {timeSlots.map((time) => (
-                        <label key={time} className="flex items-center space-x-2 cursor-pointer">
+                        <label key={time} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-gray-700/30 transition-colors">
                           <input
                             type="checkbox"
                             value={time}
                             {...register('times')}
-                            className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                            className="rounded border-gray-600 text-primary-500 focus:ring-primary-500 bg-gray-700"
                           />
-                          <span className="text-sm font-light">{time}</span>
+                          <span className="text-sm font-light text-gray-300">{time}</span>
                         </label>
                       ))}
                     </div>
@@ -178,7 +179,7 @@ const BookingWidget: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full btn-primary mt-6"
+                    className="w-full btn-primary mt-8"
                   >
                     Wyślij Zapytanie
                   </button>

@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 
-const AboutPage: React.FC = () => {
+export default function AboutPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const { t } = useLanguage()
   
-  // Placeholder images - will be replaced with actual gallery images
+  // Gallery images from galeria_goclaw folder
   const galleryImages = [
-    '/galeria_goclaw/image1.jpg',
-    '/galeria_goclaw/image2.jpg',
-    '/galeria_goclaw/image3.jpg',
-    '/galeria_goclaw/image4.jpg',
-    '/galeria_goclaw/image5.jpg'
+    '/galeria_goclaw/gym1.jpg',
+    '/galeria_goclaw/gym2.jpg',
+    '/galeria_goclaw/gym3.jpg',
+    '/galeria_goclaw/gym4.jpg',
+    '/galeria_goclaw/gym5.jpg',
+    '/galeria_goclaw/gym6.jpg',
+    '/galeria_goclaw/gym7.jpg'
   ]
 
   useEffect(() => {
@@ -19,7 +23,7 @@ const AboutPage: React.FC = () => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
       )
-    }, 4000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [galleryImages.length])
@@ -27,32 +31,32 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>O Mnie - Patryk Dębowski | HyperTraining</title>
-        <meta name="description" content="Poznaj Patryka Dębowskiego - doświadczonego trenera personalnego z Warszawy. Dowiedz się o jego doświadczeniu, certyfikatach i podejściu do treningu." />
-        <meta name="keywords" content="patryk dębowski, trener personalny warszawa, doświadczenie, certyfikaty, o trenerze" />
+        <title>{t('about.title')}</title>
+        <meta name="description" content={t('about.description')} />
+        <meta name="keywords" content="trener personalny Warszawa opinie, patryk dębowski trener personalny, trener personalny dla kobiet Warszawa, trener fitness Warszawa, dobry trener personalny Warszawa, certyfikowany trener personalny Warszawa, trener siłowy Warszawa" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900">
         {/* Header */}
-        <section className="bg-primary-600 text-white section-padding">
+        <section className="bg-gray-900 text-white section-padding border-b border-gray-700">
           <div className="container-max text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                O Mnie
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                {t('about.header.title')}
               </h1>
-              <p className="text-xl font-light max-w-2xl mx-auto">
-                Poznaj historię i doświadczenie, które stoją za HyperTraining
+              <p className="text-xl font-light max-w-2xl mx-auto text-gray-200">
+                {t('about.header.description')}
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* About Content */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-gray-800">
           <div className="container-max">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -60,24 +64,18 @@ const AboutPage: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-white mb-6">
                   Patryk Dębowski
                 </h2>
-                <div className="space-y-4 text-gray-600 font-light">
+                <div className="space-y-4 text-gray-200 font-light">
                   <p>
-                    Witaj! Jestem Patryk Dębowski, certyfikowanym trenerem personalnym z ponad 8-letnim 
-                    doświadczeniem w branży fitness. Moją pasją jest pomaganie ludziom w osiąganiu ich 
-                    celów zdrowotnych i kondycyjnych poprzez indywidualne podejście do każdego klienta.
+                    {t('about.content.intro.p1')}
                   </p>
                   <p>
-                    Specjalizuję się w treningu siłowym, redukcji tkanki tłuszczowej, budowaniu masy 
-                    mięśniowej oraz rehabilitacji pourazowej. Moje podejście opiera się na naukowych 
-                    podstawach treningu oraz wieloletnim doświadczeniu praktycznym.
+                    {t('about.content.intro.p2')}
                   </p>
                   <p>
-                    Wierzę, że każdy zasługuje na indywidualne podejście i plan treningowy dostosowany 
-                    do jego potrzeb, możliwości i stylu życia. Dlatego każdy program treningowy, który 
-                    tworzę, jest unikalny i skoncentrowany na osiągnięciu konkretnych rezultatów.
+                    {t('about.content.intro.p3')}
                   </p>
                 </div>
               </motion.div>
@@ -88,20 +86,13 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="bg-primary-50 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Moje Kwalifikacje</h3>
+                <div className="card-dark">
+                  <h3 className="text-2xl font-bold text-white mb-6">{t('about.qualifications.title')}</h3>
                   <ul className="space-y-3">
-                    {[
-                      'Certyfikowany Trener Personalny (ACSM)',
-                      'Specjalista ds. Żywienia Sportowego',
-                      'Certyfikat Treningu Funkcjonalnego',
-                      'Kurs Pierwszej Pomocy',
-                      'Specjalizacja w Treningu Siłowym',
-                      'Certyfikat Treningu Rehabilitacyjnego'
-                    ].map((qualification, index) => (
+                    {[1, 2, 3, 4, 5, 6].map((num, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
-                        <span className="font-light">{qualification}</span>
+                        <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                        <span className="font-light text-gray-200">{t(`about.qualifications.${num}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -112,7 +103,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Gallery Section */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-gray-700">
           <div className="container-max">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -120,11 +111,11 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Galeria Siłowni
+              <h2 className="text-3xl font-bold text-white mb-4">
+                {t('about.gallery.title')}
               </h2>
-              <p className="text-xl text-gray-600 font-light">
-                Zobacz nowoczesne wyposażenie i przestrzeń treningową
+              <p className="text-xl text-gray-200 font-light">
+                {t('about.gallery.description')}
               </p>
             </motion.div>
 
@@ -134,16 +125,16 @@ const AboutPage: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <img
                   src={galleryImages[currentImageIndex]}
                   alt={`Galeria siłowni ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform hover:scale-105"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = 'https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=Galeria+Siłowni'
+                    e.currentTarget.src = 'https://via.placeholder.com/800x400/1e293b/06b6d4?text=Galeria+Siłowni'
                   }}
                 />
               </motion.div>
@@ -154,8 +145,8 @@ const AboutPage: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                    className={`w-3 h-3 rounded-full transition-all duration-500 ease-in-out transform hover:scale-125 ${
+                      index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white/50 hover:bg-white/75'
                     }`}
                   />
                 ))}
@@ -165,7 +156,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Location Section */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-gray-800">
           <div className="container-max">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
@@ -173,29 +164,36 @@ const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Lokalizacja
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  {t('about.location.title')}
                 </h2>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Adres Siłowni</h3>
-                    <p className="text-gray-600 font-light">
-                      gen. Augusta Emila Fieldorfa Nila 41<br />
-                      04-125 Warszawa
+                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.gym.title')}</h3>
+                    <p className="text-gray-200 font-light">
+                      {t('about.location.gym.address').split('\n').map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          {index === 0 && <br />}
+                        </span>
+                      ))}
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Godziny Otwarcia</h3>
-                    <p className="text-gray-600 font-light">
-                      Poniedziałek - Sobota: 8:00 - 20:00<br />
-                      Niedziela: Zamknięte
+                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.hours.title')}</h3>
+                    <p className="text-gray-200 font-light">
+                      {t('about.location.hours.schedule').split('\n').map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          {index === 0 && <br />}
+                        </span>
+                      ))}
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Dojazd</h3>
-                    <p className="text-gray-600 font-light">
-                      Dogodna lokalizacja z łatwym dostępem komunikacją publiczną. 
-                      Parking dostępny na miejscu.
+                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.transport.title')}</h3>
+                    <p className="text-gray-200 font-light">
+                      {t('about.location.transport.description')}
                     </p>
                   </div>
                 </div>
@@ -208,7 +206,7 @@ const AboutPage: React.FC = () => {
                 className="h-96 rounded-2xl overflow-hidden shadow-lg"
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.8234567890123!2d21.0123456789!3d52.2123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDEyJzQ0LjQiTiAyMcKwMDAnNDQuNCJF!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.123456789!2d21.0827!3d52.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sgen.%20Augusta%20Emila%20Fieldorfa%20Nila%2041%2C%2004-125%20Warszawa!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -225,5 +223,3 @@ const AboutPage: React.FC = () => {
     </>
   )
 }
-
-export default AboutPage

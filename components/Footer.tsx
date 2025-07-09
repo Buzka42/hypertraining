@@ -1,40 +1,41 @@
 import React from 'react'
 import Link from 'next/link'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage()
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 border-t border-gray-800">
       <div className="container-max section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">HyperTraining</h3>
-            <p className="text-gray-300 mb-4">
-              Profesjonalny trening personalny w Warszawie z Patrykiem Dębowskim. 
-              Osiągnij swoje cele fitness z doświadczonym trenerem.
+            <h3 className="text-2xl font-bold mb-6 gradient-text">HyperTraining</h3>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              {t('footer.description')}
             </p>
-            <p className="text-gray-300">
-              <strong>Adres:</strong><br />
-              gen. Augusta Emila Fieldorfa Nila 41<br />
-              04-125 Warszawa
-            </p>
+            <div className="text-gray-400">
+              <p className="font-semibold text-white mb-2">Adres:</p>
+              <p>gen. Augusta Emila Fieldorfa Nila 41</p>
+              <p>04-125 Warszawa</p>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Szybkie Linki</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-300 hover:text-white transition-colors">Strona Główna</Link></li>
-              <li><Link href="/cennik" className="text-gray-300 hover:text-white transition-colors">Cennik</Link></li>
-              <li><Link href="/o-mnie" className="text-gray-300 hover:text-white transition-colors">O Mnie</Link></li>
-              <li><Link href="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link href="/kontakt" className="text-gray-300 hover:text-white transition-colors">Kontakt</Link></li>
+              <li><Link href="/" className="text-gray-300 hover:text-white transition-colors">{t('nav.home')}</Link></li>
+              <li><Link href="/cennik" className="text-gray-300 hover:text-white transition-colors">{t('nav.pricing')}</Link></li>
+              <li><Link href="/o-mnie" className="text-gray-300 hover:text-white transition-colors">{t('nav.about')}</Link></li>
+              <li><Link href="/faq" className="text-gray-300 hover:text-white transition-colors">{t('nav.faq')}</Link></li>
+              <li><Link href="/kontakt" className="text-gray-300 hover:text-white transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Kontakt</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.contact')}</h3>
             <div className="space-y-2 text-gray-300">
               <p>📧 Email: kontakt@hypertraining.pl</p>
               <p>📱 Telefon: +48 123 456 789</p>
