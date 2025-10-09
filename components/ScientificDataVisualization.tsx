@@ -171,7 +171,7 @@ const ScientificDataVisualization: React.FC = () => {
         </div>
       </div>
       
-      <div className="mb-8 overflow-x-auto w-full">
+      <div className="mb-8 w-full">
         <h4 className="text-xl font-bold mb-4 text-foreground text-center">
           {language === 'pl' ? 'Skuteczność Hipertrofii vs Utracone Zyski' : 'Hypertrophy Effectiveness vs Missed Gains'}
         </h4>

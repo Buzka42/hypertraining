@@ -71,7 +71,7 @@ const RIRGraphVisualization: React.FC = () => {
     : '0';
 
   return (
-    <div className="my-10 p-3 md:p-4 bg-background/50 rounded-xl border border-border max-w-full overflow-x-auto">
+    <div className="my-10 p-3 md:p-4 bg-background/50 rounded-xl border border-border max-w-full">
       <h3 className="text-lg font-bold mb-3 text-center">
         {language === 'pl' 
           ? 'Wpływ Trenera Personalnego na Zyski Mięśniowe' 

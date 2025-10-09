@@ -316,7 +316,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="glass-card p-4 md:p-12 max-w-full overflow-x-auto">
+          <div className="glass-card p-4 md:p-12 max-w-full">
             <div className="prose prose-sm md:prose-lg text-foreground min-w-[300px]">
               <h3 className="text-xl md:text-2xl font-bold mb-4">{t('home.scientific.intro.title')}</h3>
               <p className="mb-4 md:mb-6">
@@ -348,7 +348,7 @@ export default function HomePage() {
               </p>
 
               {/* Graph Visualization */}
-              <div className="overflow-x-auto max-w-full">
+              <div className="max-w-full">
                 <RIRGraphVisualization />
               </div>
 
