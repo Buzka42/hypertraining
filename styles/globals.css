@@ -318,10 +318,12 @@ img {
 }
 
 /* Debugging - highlight elements that might be causing overflow */
-/*
 @media (max-width: 768px) {
   * {
     outline: 1px solid red;
   }
+  
+  #home * {
+    outline: 1px solid blue;
+  }
 }
-*/

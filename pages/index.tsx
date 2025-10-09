@@ -45,16 +45,16 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="w-full overflow-hidden pt-16">
-        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+      <section id="home" className="w-full max-w-full overflow-hidden pt-16">
+        <div className="container mx-auto max-w-full px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
-              <div>
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+              <div className="max-w-full overflow-hidden">
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-full overflow-hidden">
                   {t('home.hero.title')}
+                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold max-w-full overflow-hidden">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2 text-xl md:text-2xl font-bold max-w-full overflow-hidden">{t('home.hero.location')}</span>
                 </h1>
-                <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
-                <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
               </div>
               
               <div>
@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
             
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-primary blur-2xl opacity-20 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl"></div>
               <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-fitness.jpg" 
