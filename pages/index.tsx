@@ -50,10 +50,10 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center max-w-full">
             <div className="space-y-8 flex-1">
               <div>
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-full overflow-hidden">
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                   {t('home.hero.title')}
-                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold max-w-full overflow-hidden">{t('home.hero.subtitle')}</span>
-                  <span className="block mt-2 text-xl md:text-2xl font-bold max-w-full overflow-hidden">{t('home.hero.location')}</span>
+                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
                 </h1>
               </div>
               
