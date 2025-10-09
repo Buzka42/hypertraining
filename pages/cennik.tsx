@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { CheckIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useBooking } from '../contexts/BookingContext'
+import PageHeader from '../components/PageHeader'
 
 export default function CennikPage() {
   const { t, language } = useLanguage()
@@ -290,22 +291,10 @@ export default function CennikPage() {
 
       <div className="min-h-screen bg-background">
         {/* Header */}
-        <section className="bg-background text-foreground py-24 px-4 border-b border-border">
-          <div className="container mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                {t('pricing.header.title')}
-              </h1>
-              <p className="text-xl text-muted-foreground mx-auto">
-                {t('pricing.header.description')}
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHeader 
+          title={t('pricing.header.title')}
+          description={t('pricing.header.description')}
+        />
 
         {/* Well Fitness Packages */}
         <section className="py-24 px-4 bg-card">

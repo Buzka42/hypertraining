@@ -9,6 +9,7 @@ import {
   ClockIcon 
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '../contexts/LanguageContext'
+import PageHeader from '../components/PageHeader'
 
 interface ContactFormData {
   name: string
@@ -68,25 +69,10 @@ export default function ContactPage() {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative py-24 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-hero"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/20"></div>
-          
-          <div className="relative z-10 container mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                <span className="text-gradient">{t('contact.header.title') || 'Kontakt'}</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mx-auto">
-                {t('contact.header.description') || 'Skontaktuj się ze mną i rozpocznij swoją przygodę z treningiem personalnym'}
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHeader 
+          title={t('contact.header.title') || 'Kontakt'}
+          description={t('contact.header.description') || 'Skontaktuj się ze mną i rozpocznij swoją przygodę z treningiem personalnym'}
+        />
 
         {/* Contact Info */}
         <section className="relative py-24 px-4 bg-card">
