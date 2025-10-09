@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { StarIcon, ArrowRightIcon, UserGroupIcon, ComputerDesktopIcon, FireIcon } from '@heroicons/react/24/solid'
+import { StarIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '../contexts/LanguageContext'
 import RIRGraphVisualization from '../components/RIRGraphVisualization'
 
@@ -159,7 +159,7 @@ export default function HomePage() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="mb-4 flex justify-center">
-                    <img src={item.icon} alt={item.title} className="w-16 h-16 object-contain" />
+                    <Image src={item.icon} alt={item.title} width={64} height={64} className="object-contain" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-foreground text-center">{item.title}</h4>
                   <p className="text-muted-foreground text-center">{item.description}</p>
@@ -179,7 +179,7 @@ export default function HomePage() {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/3 flex justify-center">
                   <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-full w-48 h-48 flex items-center justify-center">
-                    <img src="/icons/PlantBasedDiet.png" alt={t('home.why.plant.title')} className="w-32 h-32 object-contain" />
+                    <Image src="/icons/PlantBasedDiet.png" alt={t('home.why.plant.title')} width={128} height={128} className="object-contain" />
                   </div>
                 </div>
                 <div className="md:w-2/3">
@@ -237,7 +237,7 @@ export default function HomePage() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="mb-4 flex justify-center">
-                    <img src={item.icon} alt={item.title} className="w-16 h-16 object-contain" />
+                    <Image src={item.icon} alt={item.title} width={64} height={64} className="object-contain" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-foreground text-center">{item.title}</h4>
                   <p className="text-muted-foreground text-center">{item.description}</p>
@@ -280,7 +280,7 @@ export default function HomePage() {
                   className="flex items-start space-x-4 p-6 bg-background/50 rounded-xl"
                 >
                   <div className="mt-1">
-                    <img src={item.icon} alt={item.title} className="w-12 h-12 object-contain" />
+                    <Image src={item.icon} alt={item.title} width={48} height={48} className="object-contain" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2 text-foreground">{item.title}</h4>
@@ -469,7 +469,7 @@ export default function HomePage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="mb-4 flex justify-center">
-                  <img src={service.icon} alt={service.title} className="w-16 h-16 object-contain" />
+                  <Image src={service.icon} alt={service.title} width={64} height={64} className="object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-center">{service.title}</h3>
                 <p className="text-muted-foreground text-center">{service.description}</p>
