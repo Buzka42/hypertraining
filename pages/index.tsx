@@ -46,7 +46,7 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full overflow-hidden pt-16">
-        <div className="px-4 md:px-6 py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
               <div className="max-w-full overflow-hidden">
