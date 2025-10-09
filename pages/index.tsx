@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
             
             <div className="relative max-w-full">
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" style={{ maxWidth: '100%', position: 'absolute' }}></div>
+              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full" style={{ maxWidth: '100%', position: 'absolute' }}></div>
               <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden" style={{ maxWidth: '100%' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
