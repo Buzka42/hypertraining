@@ -46,7 +46,7 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full pt-16">
-        <div className="px-4 md:px-6 py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
               <div>
@@ -102,7 +102,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Train With Me Section */}
-      <section id="why-train" className="py-24 px-4 bg-card w-full">
+      <section id="why-train" className="py-24 bg-card w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -299,7 +299,7 @@ export default function HomePage() {
       </section>
 
       {/* Maximize Your Gains: The Science Behind Why a Personal Trainer is Essential for RIR Accuracy */}
-      <section id="rir-science" className="py-24 px-4 bg-card w-full">
+      <section id="rir-science" className="py-24 bg-card w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -362,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="results" className="py-24 px-4 bg-gradient-to-b from-background to-background/50 w-full">
+      <section id="results" className="py-24 bg-gradient-to-b from-background to-background/50 w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -405,7 +405,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-16 md:py-24 px-4 w-full bg-gradient-hero">
+      <section id="contact" className="py-16 md:py-24 w-full bg-gradient-hero">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -428,7 +428,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section - Moved to bottom as requested */}
-      <section id="services" className="py-24 px-4 bg-card w-full">
+      <section id="services" className="py-24 bg-card w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -487,7 +487,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section - Moved to bottom as requested */}
-      <section id="features" className="py-24 px-4 bg-card w-full">
+      <section id="features" className="py-24 bg-card w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
