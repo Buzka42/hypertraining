@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { XMarkIcon, CalendarIcon } from '@heroicons/react/24/outline'
 import { useForm } from 'react-hook-form'
+import { useBooking } from '../contexts/BookingContext'
+import { useLanguage } from '../contexts/LanguageContext'
 
 interface BookingFormData {
   name: string
@@ -11,24 +13,18 @@ interface BookingFormData {
 }
 
 const BookingWidget: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<BookingFormData>()
+  const { isBookingOpen, setIsBookingOpen } = useBooking()
+  const { t, language } = useLanguage()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<BookingFormData>()
 
-  const daysOfWeek = [
-    'Poniedziałek',
-    'Wtorek',
-    'Środa',
-    'Czwartek',
-    'Piątek',
-    'Sobota'
-  ]
+  const daysOfWeek = language === 'pl' 
+    ? ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota']
+    : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-  const timeSlots = [
-    '8:00-12:00',
-    '12:00-16:00',
-    '16:00-20:00'
-  ]
+  const timeSlots = language === 'pl'
+    ? ['8:00-12:00', '12:00-16:00', '16:00-20:00']
+    : ['8:00-12:00', '12:00-16:00', '16:00-20:00']
 
   const onSubmit = async (data: BookingFormData) => {
     // Here you would integrate with EmailJS or your preferred email service
@@ -41,7 +37,7 @@ const BookingWidget: React.FC = () => {
       setIsSubmitted(true)
       setTimeout(() => {
         setIsSubmitted(false)
-        setIsOpen(false)
+        setIsBookingOpen(false)
         reset()
       }, 3000)
     } catch (error) {
@@ -53,37 +49,37 @@ const BookingWidget: React.FC = () => {
     <>
       {/* Floating Button */}
       <motion.button
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white px-6 py-4 rounded-full shadow-2xl z-50 flex items-center space-x-3 backdrop-blur-sm border border-white/10"
+        className="fixed bottom-6 right-6 glass-card text-primary-foreground px-6 py-4 rounded-full shadow-2xl z-50 flex items-center space-x-3"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsBookingOpen(true)}
       >
         <CalendarIcon className="w-5 h-5" />
-        <span className="font-semibold text-sm">Wyślij zapytanie o trening</span>
+        <span className="font-semibold text-sm">{t('common.book')}</span>
       </motion.button>
 
       {/* Modal */}
       <AnimatePresence>
-        {isOpen && (
+        {isBookingOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-            onClick={() => setIsOpen(false)}
+            onClick={() => setIsBookingOpen(false)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-gray-800/95 backdrop-blur-md rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto border border-gray-700/50"
+              className="bg-card/95 backdrop-blur-md rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto border border-border"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-8">
-                <h2 className="text-2xl font-bold text-white">Umów Trening</h2>
+                <h2 className="text-2xl font-bold text-foreground">{t('booking.title')}</h2>
                 <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-gray-700/50 rounded-lg text-gray-400 hover:text-white transition-colors"
+                  onClick={() => setIsBookingOpen(false)}
+                  className="p-2 hover:bg-card/50 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <XMarkIcon className="w-5 h-5" />
                 </button>
@@ -100,21 +96,33 @@ const BookingWidget: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Dziękuję za zapytanie!</h3>
-                  <p className="text-gray-300 font-light">Skontaktuję się z Tobą tak szybko, jak to możliwe.</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{t('booking.success.title')}</h3>
+                  <p className="text-muted-foreground font-light">{t('booking.success.description')}</p>
+                  <div className="mt-4">
+                    <p className="text-muted-foreground font-light">
+                      {t('booking.call')}: <a href="tel:+48123456789" className="text-primary hover:underline">+48 123 456 789</a>
+                    </p>
+                    <p className="text-muted-foreground font-light mt-2">
+                      {t('booking.email')}: <a href="mailto:contact@hypertraining.pl" className="text-primary hover:underline">contact@hypertraining.pl</a>
+                    </p>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-300 mb-3">
-                      Imię i Nazwisko *
+                    <label className="block text-sm font-semibold text-muted-foreground mb-3">
+                      {language === 'pl' ? 'Imię i Nazwisko *' : 'Name and Surname *'}
                     </label>
                     <input
                       type="text"
-                      {...register('name', { required: 'Imię i nazwisko jest wymagane' })}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light text-white placeholder-gray-400 transition-all"
-                      placeholder="Wprowadź swoje imię i nazwisko"
+                      {...register('name', { 
+                        required: language === 'pl' 
+                          ? 'Imię i nazwisko jest wymagane' 
+                          : 'Name and surname is required' 
+                      })}
+                      className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent font-light text-foreground placeholder-muted-foreground transition-all"
+                      placeholder={language === 'pl' ? 'Wprowadź swoje imię i nazwisko' : 'Enter your name and surname'}
                     />
                     {errors.name && (
                       <p className="text-red-400 text-sm mt-2 font-light">{errors.name.message}</p>
@@ -123,14 +131,18 @@ const BookingWidget: React.FC = () => {
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-300 mb-3">
-                      Numer Telefonu *
+                    <label className="block text-sm font-semibold text-muted-foreground mb-3">
+                      {language === 'pl' ? 'Numer Telefonu *' : 'Phone Number *'}
                     </label>
                     <input
                       type="tel"
-                      {...register('phone', { required: 'Numer telefonu jest wymagany' })}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent font-light text-white placeholder-gray-400 transition-all"
-                      placeholder="+48 123 456 789"
+                      {...register('phone', { 
+                        required: language === 'pl' 
+                          ? 'Numer telefonu jest wymagany' 
+                          : 'Phone number is required' 
+                      })}
+                      className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent font-light text-foreground placeholder-muted-foreground transition-all"
+                      placeholder={language === 'pl' ? '+48 123 456 789' : '+48 123 456 789'}
                     />
                     {errors.phone && (
                       <p className="text-red-400 text-sm mt-2 font-light">{errors.phone.message}</p>
@@ -139,19 +151,19 @@ const BookingWidget: React.FC = () => {
 
                   {/* Days */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-300 mb-3">
-                      Preferowane Dni (możesz wybrać kilka)
+                    <label className="block text-sm font-semibold text-muted-foreground mb-3">
+                      {language === 'pl' ? 'Preferowane Dni (możesz wybrać kilka)' : 'Preferred Days (you can select multiple)'}
                     </label>
                     <div className="grid grid-cols-2 gap-3">
                       {daysOfWeek.map((day) => (
-                        <label key={day} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-gray-700/30 transition-colors">
+                        <label key={day} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-card/30 transition-colors">
                           <input
                             type="checkbox"
                             value={day}
                             {...register('days')}
-                            className="rounded border-gray-600 text-primary-500 focus:ring-primary-500 bg-gray-700"
+                            className="rounded border-border text-primary focus:ring-primary bg-card"
                           />
-                          <span className="text-sm font-light text-gray-300">{day}</span>
+                          <span className="text-sm font-light text-muted-foreground">{day}</span>
                         </label>
                       ))}
                     </div>
@@ -159,19 +171,19 @@ const BookingWidget: React.FC = () => {
 
                   {/* Time Slots */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-300 mb-3">
-                      Preferowane Godziny (możesz wybrać kilka)
+                    <label className="block text-sm font-semibold text-muted-foreground mb-3">
+                      {language === 'pl' ? 'Preferowane Godziny (możesz wybrać kilka)' : 'Preferred Hours (you can select multiple)'}
                     </label>
                     <div className="space-y-3">
                       {timeSlots.map((time) => (
-                        <label key={time} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-gray-700/30 transition-colors">
+                        <label key={time} className="flex items-center space-x-3 cursor-pointer p-2 rounded-lg hover:bg-card/30 transition-colors">
                           <input
                             type="checkbox"
                             value={time}
                             {...register('times')}
-                            className="rounded border-gray-600 text-primary-500 focus:ring-primary-500 bg-gray-700"
+                            className="rounded border-border text-primary focus:ring-primary bg-card"
                           />
-                          <span className="text-sm font-light text-gray-300">{time}</span>
+                          <span className="text-sm font-light text-muted-foreground">{time}</span>
                         </label>
                       ))}
                     </div>
@@ -181,7 +193,7 @@ const BookingWidget: React.FC = () => {
                     type="submit"
                     className="w-full btn-primary mt-8"
                   >
-                    Wyślij Zapytanie
+                    {language === 'pl' ? 'Wyślij Zapytanie' : 'Send Request'}
                   </button>
                 </form>
               )}

@@ -6,13 +6,13 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center space-x-1 bg-gray-800/50 rounded-lg p-1">
+    <div className="flex items-center space-x-1 bg-card/30 backdrop-blur-lg rounded-xl p-1 border border-border">
       <button
         onClick={() => setLanguage('pl')}
-        className={`p-2 rounded-md transition-all duration-200 hover:scale-110 ${
+        className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
           language === 'pl' 
-            ? 'bg-indigo-600 shadow-lg ring-2 ring-indigo-400' 
-            : 'hover:bg-gray-700/50'
+            ? 'bg-primary shadow-lg ring-2 ring-primary/50' 
+            : 'hover:bg-card/50'
         }`}
         title="Polski"
       >
@@ -26,10 +26,10 @@ export default function LanguageSwitcher() {
       </button>
       <button
         onClick={() => setLanguage('en')}
-        className={`p-2 rounded-md transition-all duration-200 hover:scale-110 ${
+        className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
           language === 'en' 
-            ? 'bg-indigo-600 shadow-lg ring-2 ring-indigo-400' 
-            : 'hover:bg-gray-700/50'
+            ? 'bg-primary shadow-lg ring-2 ring-primary/50' 
+            : 'hover:bg-card/50'
         }`}
         title="English"
       >

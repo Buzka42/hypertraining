@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
+import Image from 'next/image'
 
 export default function AboutPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -36,19 +37,19 @@ export default function AboutPage() {
         <meta name="keywords" content="trener personalny Warszawa opinie, patryk dębowski trener personalny, trener personalny dla kobiet Warszawa, trener fitness Warszawa, dobry trener personalny Warszawa, certyfikowany trener personalny Warszawa, trener siłowy Warszawa" />
       </Head>
 
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-background">
         {/* Header */}
-        <section className="bg-gray-900 text-white section-padding border-b border-gray-700">
-          <div className="container-max text-center">
+        <section className="bg-background text-foreground py-24 px-4 border-b border-border">
+          <div className="container mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('about.header.title')}
               </h1>
-              <p className="text-xl font-light max-w-2xl mx-auto text-gray-200">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t('about.header.description')}
               </p>
             </motion.div>
@@ -56,18 +57,18 @@ export default function AboutPage() {
         </section>
 
         {/* About Content */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                   Patryk Dębowski
                 </h2>
-                <div className="space-y-4 text-gray-200 font-light">
+                <div className="space-y-4 text-muted-foreground">
                   <p>
                     {t('about.content.intro.p1')}
                   </p>
@@ -84,15 +85,14 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative"
               >
-                <div className="card-dark">
-                  <h3 className="text-2xl font-bold text-white mb-6">{t('about.qualifications.title')}</h3>
+                <div className="glass-card p-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-6">{t('about.qualifications.title')}</h3>
                   <ul className="space-y-3">
                     {[1, 2, 3, 4, 5, 6].map((num, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                        <span className="font-light text-gray-200">{t(`about.qualifications.${num}`)}</span>
+                        <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                        <span className="text-muted-foreground">{t(`about.qualifications.${num}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -103,18 +103,18 @@ export default function AboutPage() {
         </section>
 
         {/* Gallery Section */}
-        <section className="section-padding bg-gray-700">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-background">
+          <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
                 {t('about.gallery.title')}
               </h2>
-              <p className="text-xl text-gray-200 font-light">
+              <p className="text-xl text-muted-foreground">
                 {t('about.gallery.description')}
               </p>
             </motion.div>
@@ -128,15 +128,18 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
-                <img
-                  src={galleryImages[currentImageIndex]}
-                  alt={`Galeria siłowni ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = 'https://via.placeholder.com/800x400/1e293b/06b6d4?text=Galeria+Siłowni'
-                  }}
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={galleryImages[currentImageIndex]}
+                    alt={`Galeria siłowni ${currentImageIndex + 1}`}
+                    fill
+                    className="object-cover transition-all duration-1000 ease-in-out transform hover:scale-105"
+                    onError={(e) => {
+                      // Fallback to placeholder if image doesn't exist
+                      e.currentTarget.src = 'https://via.placeholder.com/800x400/1e293b/06b6d4?text=Galeria+Siłowni'
+                    }}
+                  />
+                </div>
               </motion.div>
               
               {/* Image indicators */}
@@ -146,7 +149,7 @@ export default function AboutPage() {
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-500 ease-in-out transform hover:scale-125 ${
-                      index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white/50 hover:bg-white/75'
+                      index === currentImageIndex ? 'bg-primary shadow-lg' : 'bg-primary/50 hover:bg-primary/75'
                     }`}
                   />
                 ))}
@@ -156,44 +159,27 @@ export default function AboutPage() {
         </section>
 
         {/* Location Section */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                   {t('about.location.title')}
                 </h2>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.gym.title')}</h3>
-                    <p className="text-gray-200 font-light">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{t('about.location.gym.title')}</h3>
+                    <p className="text-muted-foreground">
                       {t('about.location.gym.address').split('\n').map((line, index) => (
                         <span key={index}>
                           {line}
                           {index === 0 && <br />}
                         </span>
                       ))}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.hours.title')}</h3>
-                    <p className="text-gray-200 font-light">
-                      {t('about.location.hours.schedule').split('\n').map((line, index) => (
-                        <span key={index}>
-                          {line}
-                          {index === 0 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{t('about.location.transport.title')}</h3>
-                    <p className="text-gray-200 font-light">
-                      {t('about.location.transport.description')}
                     </p>
                   </div>
                 </div>

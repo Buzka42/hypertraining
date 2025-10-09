@@ -1,101 +1,102 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { CheckIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useBooking } from '../contexts/BookingContext'
 
 export default function CennikPage() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const { setIsBookingOpen } = useBooking()
 
   const wellFitnessPackages = [
     {
       id: '1',
-      name: '1 Trening',
-      price: '150',
-      duration: 'Pojedyncza sesja',
-      description: 'Idealny na start - poznaj moje metody treningowe',
+      name: t('pricing.packages.1.name'),
+      price: language === 'pl' ? '150' : '150',
+      duration: language === 'pl' ? 'Pojedyncza sesja' : 'Single session',
+      description: t('pricing.packages.1.description'),
       features: [
-        'Indywidualny trening 60 min',
-        'Analiza potrzeb i celow',
-        'Podstawowe wskazowki zywieniowe',
-        'Trening w Well Fitness Goclaw',
-        'Profesjonalne wsparcie trenera'
+        t('pricing.packages.1.features.1'),
+        t('pricing.packages.1.features.2'),
+        t('pricing.packages.1.features.3'),
+        t('pricing.packages.1.features.4'),
+        t('pricing.packages.1.features.5')
       ],
       popular: false
     },
     {
       id: '4',
-      name: '4 Treningi',
-      price: '520',
-      duration: '130 zl za trening',
-      description: 'Pakiet startowy - pierwsze efekty juz widoczne',
+      name: t('pricing.packages.4.name'),
+      price: language === 'pl' ? '520' : '520',
+      duration: language === 'pl' ? '130 zl za trening' : '130 PLN per session',
+      description: t('pricing.packages.4.description'),
       features: [
-        '4 treningi personalne po 60 min',
-        'Plan treningowy na miesiac',
-        'Wsparcie motywacyjne',
-        'Monitoring postepow',
-        'Podstawowe wskazowki zywieniowe'
+        t('pricing.packages.4.features.1'),
+        t('pricing.packages.4.features.2'),
+        t('pricing.packages.4.features.3'),
+        t('pricing.packages.4.features.4'),
+        t('pricing.packages.4.features.5')
       ],
       popular: false
     },
     {
       id: '8',
-      name: '8 Treningow',
-      price: '960',
-      duration: '120 zl za trening',
-      description: 'Najchetniej wybierany pakiet - widoczne rezultaty',
+      name: t('pricing.packages.8.name'),
+      price: language === 'pl' ? '960' : '960',
+      duration: language === 'pl' ? '120 zl za trening' : '120 PLN per session',
+      description: t('pricing.packages.8.description'),
       features: [
-        '8 treningow personalnych po 60 min',
-        'Szczegolowy plan treningowy',
-        'Plan zywieniowy',
-        'Regularne pomiary i ocena postepow',
-        'Wsparcie miedzy treningami'
+        t('pricing.packages.8.features.1'),
+        t('pricing.packages.8.features.2'),
+        t('pricing.packages.8.features.3'),
+        t('pricing.packages.8.features.4'),
+        t('pricing.packages.8.features.5')
       ],
       popular: true
     },
     {
       id: '12',
-      name: '12 Treningow',
-      price: '1320',
-      duration: '110 zl za trening',
-      description: 'Pakiet dla ambitnych - trwala zmiana nawykow',
+      name: t('pricing.packages.12.name'),
+      price: language === 'pl' ? '1320' : '1320',
+      duration: language === 'pl' ? '110 zl za trening' : '110 PLN per session',
+      description: t('pricing.packages.12.description'),
       features: [
-        '12 treningow personalnych po 60 min',
-        'Kompleksowy plan treningowy',
-        'Indywidualny plan zywieniowy',
-        'Regularne konsultacje',
-        'Dostep do aplikacji treningowej'
+        t('pricing.packages.12.features.1'),
+        t('pricing.packages.12.features.2'),
+        t('pricing.packages.12.features.3'),
+        t('pricing.packages.12.features.4'),
+        t('pricing.packages.12.features.5')
       ],
       popular: false
     },
     {
       id: '16',
-      name: '16 Treningow',
-      price: '1680',
-      duration: '105 zl za trening',
-      description: 'Rozszerzony pakiet dla zaawansowanych',
+      name: t('pricing.packages.16.name'),
+      price: language === 'pl' ? '1680' : '1680',
+      duration: language === 'pl' ? '105 zl za trening' : '105 PLN per session',
+      description: t('pricing.packages.16.description'),
       features: [
-        '16 treningow personalnych po 60 min',
-        'Zaawansowany plan treningowy',
-        'Szczegolowy plan zywieniowy',
-        'Regularne pomiary skladu ciala',
-        'Coaching online miedzy treningami'
+        t('pricing.packages.16.features.1'),
+        t('pricing.packages.16.features.2'),
+        t('pricing.packages.16.features.3'),
+        t('pricing.packages.16.features.4'),
+        t('pricing.packages.16.features.5')
       ],
       popular: false
     },
     {
       id: '25',
-      name: '25 Treningow',
-      price: '2500',
-      duration: '100 zl za trening',
-      description: 'Pakiet transformacyjny - najlepsza cena za trening',
+      name: t('pricing.packages.25.name'),
+      price: language === 'pl' ? '2500' : '2500',
+      duration: language === 'pl' ? '100 zl za trening' : '100 PLN per session',
+      description: t('pricing.packages.25.description'),
       features: [
-        '25 treningow personalnych po 60 min',
-        'Kompleksowy program treningowy',
-        'Szczegolowy plan zywieniowy',
-        'Pelne wsparcie przez 3-4 miesiace',
-        'Najlepsza cena za pojedynczy trening'
+        t('pricing.packages.25.features.1'),
+        t('pricing.packages.25.features.2'),
+        t('pricing.packages.25.features.3'),
+        t('pricing.packages.25.features.4'),
+        t('pricing.packages.25.features.5')
       ],
       popular: false
     }
@@ -103,174 +104,174 @@ export default function CennikPage() {
 
   const pairGroupPackages = [
     {
-      name: '1 Trening w Parze',
-      price: '200',
-      duration: 'Pojedyncza sesja dla 2 osob',
-      description: 'Trenuj razem z partnerem lub przyjacielem',
+      name: language === 'pl' ? '1 Trening w Parze' : '1 Pair Training',
+      price: language === 'pl' ? '200' : '200',
+      duration: language === 'pl' ? 'Pojedyncza sesja dla 2 osob' : 'Single session for 2 people',
+      description: language === 'pl' ? 'Trenuj razem z partnerem lub przyjacielem' : 'Train together with a partner or friend',
       features: [
-        'Trening dla 2 osob - 60 min',
-        'Cwiczenia dostosowane do obu osob',
-        'Motywacja w parze',
-        'Wspolne osiaganie celow',
-        'Podstawowe wskazowki zywieniowe'
+        language === 'pl' ? 'Trening dla 2 osob - 60 min' : 'Training for 2 people - 60 min',
+        language === 'pl' ? 'Cwiczenia dostosowane do obu osob' : 'Exercises adapted to both people',
+        language === 'pl' ? 'Motywacja w parze' : 'Motivation as a pair',
+        language === 'pl' ? 'Wspolne osiaganie celow' : 'Achieving goals together',
+        language === 'pl' ? 'Podstawowe wskazowki zywieniowe' : 'Basic nutritional guidance'
       ]
     },
     {
-      name: '4 Treningi w Parze',
-      price: '720',
-      duration: '180 zl za trening',
-      description: 'Pakiet startowy dla par',
+      name: language === 'pl' ? '4 Treningi w Parze' : '4 Pair Trainings',
+      price: language === 'pl' ? '720' : '720',
+      duration: language === 'pl' ? '180 zl za trening' : '180 PLN per session',
+      description: language === 'pl' ? 'Pakiet startowy dla par' : 'Starter package for pairs',
       features: [
-        '4 treningi w parze po 60 min',
-        'Plan treningowy dla obu osob',
-        'Wspolne cele i motywacja',
-        'Monitoring postepow pary',
-        'Wsparcie miedzy treningami'
+        language === 'pl' ? '4 treningi w parze po 60 min' : '4 pair trainings of 60 min each',
+        language === 'pl' ? 'Plan treningowy dla obu osob' : 'Training plan for both people',
+        language === 'pl' ? 'Wspolne cele i motywacja' : 'Shared goals and motivation',
+        language === 'pl' ? 'Monitoring postepow pary' : 'Pair progress monitoring',
+        language === 'pl' ? 'Wsparcie miedzy treningami' : 'Support between trainings'
       ]
     },
     {
-      name: '8 Treningow w Parze',
-      price: '1280',
-      duration: '160 zl za trening',
-      description: 'Rozszerzony pakiet dla par',
+      name: language === 'pl' ? '8 Treningow w Parze' : '8 Pair Trainings',
+      price: language === 'pl' ? '1280' : '1280',
+      duration: language === 'pl' ? '160 zl za trening' : '160 PLN per session',
+      description: language === 'pl' ? 'Rozszerzony pakiet dla par' : 'Extended package for pairs',
       features: [
-        '8 treningow w parze po 60 min',
-        'Szczegolowy plan treningowy',
-        'Indywidualne podejscie do kazdej osoby',
-        'Regularne pomiary postepow',
-        'Plan zywieniowy dla obu osob'
+        language === 'pl' ? '8 treningow w parze po 60 min' : '8 pair trainings of 60 min each',
+        language === 'pl' ? 'Szczegolowy plan treningowy' : 'Detailed training plan',
+        language === 'pl' ? 'Indywidualne podejscie do kazdej osoby' : 'Individual approach to each person',
+        language === 'pl' ? 'Regularne pomiary postepow' : 'Regular progress measurements',
+        language === 'pl' ? 'Plan zywieniowy dla obu osob' : 'Nutrition plan for both people'
       ]
     },
     {
-      name: '1 Trening Grupowy',
-      price: '250',
-      duration: 'Sesja dla 2-6 osob',
-      description: 'Trening w malej grupie znajomych',
+      name: language === 'pl' ? '1 Trening Grupowy' : '1 Group Training',
+      price: language === 'pl' ? '250' : '250',
+      duration: language === 'pl' ? 'Sesja dla 2-6 osob' : 'Session for 2-6 people',
+      description: language === 'pl' ? 'Trening w malej grupie znajomych' : 'Training in a small group of friends',
       features: [
-        'Trening grupowy 2-6 osob - 60 min',
-        'Cwiczenia dostosowane do grupy',
-        'Motywacja grupowa',
-        'Wspolna zabawa i cele',
-        'Podstawowe wskazowki zywieniowe'
+        language === 'pl' ? 'Trening grupowy 2-6 osob - 60 min' : 'Group training 2-6 people - 60 min',
+        language === 'pl' ? 'Cwiczenia dostosowane do grupy' : 'Exercises adapted to the group',
+        language === 'pl' ? 'Motywacja grupowa' : 'Group motivation',
+        language === 'pl' ? 'Wspolna zabawa i cele' : 'Shared fun and goals',
+        language === 'pl' ? 'Podstawowe wskazowki zywieniowe' : 'Basic nutritional guidance'
       ]
     }
   ]
 
   const otherLocations = [
     {
-      name: 'Trening Kalisteniczny',
-      price: '100',
-      duration: 'Silownia plenerowa',
-      description: 'Trening na swiezym powietrzu z wykorzystaniem wlasnej masy ciala',
+      name: language === 'pl' ? 'Trening Kalisteniczny' : 'Calisthenics Training',
+      price: language === 'pl' ? '100' : '100',
+      duration: language === 'pl' ? 'Silownia plenerowa' : 'Outdoor gym',
+      description: language === 'pl' ? 'Trening na swiezym powietrzu z wykorzystaniem wlasnej masy ciala' : 'Training in the fresh air using your own body weight',
       features: [
-        'Trening na silowni plenerowej - 60 min',
-        'Cwiczenia z wlasna masa ciala',
-        'Trening funkcjonalny',
-        'Podstawowe wskazowki zywieniowe',
-        'Dostosowanie do poziomu zaawansowania'
+        language === 'pl' ? 'Trening na silowni plenerowej - 60 min' : 'Training at outdoor gym - 60 min',
+        language === 'pl' ? 'Cwiczenia z wlasna masa ciala' : 'Bodyweight exercises',
+        language === 'pl' ? 'Trening funkcjonalny' : 'Functional training',
+        language === 'pl' ? 'Podstawowe wskazowki zywieniowe' : 'Basic nutritional guidance',
+        language === 'pl' ? 'Dostosowanie do poziomu zaawansowania' : 'Adaptation to skill level'
       ]
     },
     {
-      name: 'Trening Online',
-      price: '100',
-      duration: 'Sesja zdalna',
-      description: 'Indywidualny trening prowadzony zdalnie przez video',
+      name: language === 'pl' ? 'Trening Online' : 'Online Training',
+      price: language === 'pl' ? '100' : '100',
+      duration: language === 'pl' ? 'Sesja zdalna' : 'Remote session',
+      description: language === 'pl' ? 'Indywidualny trening prowadzony zdalnie przez video' : 'Individual training conducted remotely via video',
       features: [
-        'Trening online przez video - 60 min',
-        'Indywidualne podejscie',
-        'Trening w domu lub wybranym miejscu',
-        'Wskazowki dotyczace sprzetu',
-        'Monitoring techniki wykonania'
+        language === 'pl' ? 'Trening online przez video - 60 min' : 'Online training via video - 60 min',
+        language === 'pl' ? 'Indywidualne podejscie' : 'Individual approach',
+        language === 'pl' ? 'Trening w domu lub wybranym miejscu' : 'Training at home or chosen location',
+        language === 'pl' ? 'Wskazowki dotyczace sprzetu' : 'Equipment guidance',
+        language === 'pl' ? 'Monitoring techniki wykonania' : 'Technique execution monitoring'
       ]
     },
     {
-      name: '8 Treningow - Inna Silownia',
-      price: '1360',
-      duration: '170 zl za trening',
-      description: 'Pakiet treningow w silowni innej niz Well Fitness Goclaw',
+      name: language === 'pl' ? '8 Treningow - Inna Silownia' : '8 Trainings - Different Gym',
+      price: language === 'pl' ? '1360' : '1360',
+      duration: language === 'pl' ? '170 zl za trening' : '170 PLN per session',
+      description: language === 'pl' ? 'Pakiet treningow w silowni innej niz Well Fitness Goclaw' : 'Training package at a gym other than Well Fitness Goclaw',
       features: [
-        '8 treningow personalnych po 60 min',
-        'Trening w wybranej przez Ciebie silowni',
-        'Szczegolowy plan treningowy',
-        'Dostosowanie do sprzetu silowni',
-        'Regularne pomiary postepow'
+        language === 'pl' ? '8 treningow personalnych po 60 min' : '8 personal trainings of 60 min each',
+        language === 'pl' ? 'Trening w wybranej przez Ciebie silowni' : 'Training at your chosen gym',
+        language === 'pl' ? 'Szczegolowy plan treningowy' : 'Detailed training plan',
+        language === 'pl' ? 'Dostosowanie do sprzetu silowni' : 'Adaptation to gym equipment',
+        language === 'pl' ? 'Regularne pomiary postepow' : 'Regular progress measurements'
       ]
     }
   ]
 
   const additionalServices = [
     {
-      name: 'Plan Treningowy - Poczatkujacy',
-      price: '100',
-      description: 'Indywidualny plan treningowy dla osob rozpoczynajacych przygode z fitness',
+      name: language === 'pl' ? 'Plan Treningowy - Poczatkujacy' : 'Training Plan - Beginner',
+      price: language === 'pl' ? '100' : '100',
+      description: language === 'pl' ? 'Indywidualny plan treningowy dla osob rozpoczynajacych przygode z fitness' : 'Individual training plan for people starting their fitness journey',
       features: [
-        'Plan na 4-6 tygodni',
-        'Szczegolowe opisy cwiczen',
-        'Progresja trudnosci',
-        'Podstawowe wskazowki zywieniowe',
-        'Wsparcie przez telefon/email'
+        language === 'pl' ? 'Plan na 4-6 tygodni' : 'Plan for 4-6 weeks',
+        language === 'pl' ? 'Szczegolowe opisy cwiczen' : 'Detailed exercise descriptions',
+        language === 'pl' ? 'Progresja trudnosci' : 'Difficulty progression',
+        language === 'pl' ? 'Podstawowe wskazowki zywieniowe' : 'Basic nutritional guidance',
+        language === 'pl' ? 'Wsparcie przez telefon/email' : 'Support via phone/email'
       ]
     },
     {
-      name: 'Plan Treningowy - Sredniozaawansowany',
-      price: '150',
-      description: 'Plan dla osob z doswiadczeniem treningowym',
+      name: language === 'pl' ? 'Plan Treningowy - Sredniozaawansowany' : 'Training Plan - Intermediate',
+      price: language === 'pl' ? '150' : '150',
+      description: language === 'pl' ? 'Plan dla osob z doswiadczeniem treningowym' : 'Plan for people with training experience',
       features: [
-        'Plan na 6-8 tygodni',
-        'Zaawansowane techniki treningowe',
-        'Periodyzacja obciazen',
-        'Szczegolowe wskazowki zywieniowe',
-        'Regularne konsultacje online'
+        language === 'pl' ? 'Plan na 6-8 tygodni' : 'Plan for 6-8 weeks',
+        language === 'pl' ? 'Zaawansowane techniki treningowe' : 'Advanced training techniques',
+        language === 'pl' ? 'Periodyzacja obciazen' : 'Load periodization',
+        language === 'pl' ? 'Szczegolowe wskazowki zywieniowe' : 'Detailed nutritional guidance',
+        language === 'pl' ? 'Regularne konsultacje online' : 'Regular online consultations'
       ]
     },
     {
-      name: 'Plan Treningowy - Zaawansowany',
-      price: '300',
-      description: 'Specjalistyczny plan kulturystyczny, trojbojowy lub sportowy',
+      name: language === 'pl' ? 'Plan Treningowy - Zaawansowany' : 'Training Plan - Advanced',
+      price: language === 'pl' ? '300' : '300',
+      description: language === 'pl' ? 'Specjalistyczny plan kulturystyczny, trojbojowy lub sportowy' : 'Specialized bodybuilding, powerlifting or sports plan',
       features: [
-        'Plan na 8-12 tygodni',
-        'Specjalizacja w wybranej dyscyplinie',
-        'Zaawansowana periodyzacja',
-        'Kompleksowy plan zywieniowy',
-        'Regularne konsultacje i korekty'
+        language === 'pl' ? 'Plan na 8-12 tygodni' : 'Plan for 8-12 weeks',
+        language === 'pl' ? 'Specjalizacja w wybranej dyscyplinie' : 'Specialization in chosen discipline',
+        language === 'pl' ? 'Zaawansowana periodyzacja' : 'Advanced periodization',
+        language === 'pl' ? 'Kompleksowy plan zywieniowy' : 'Comprehensive nutrition plan',
+        language === 'pl' ? 'Regularne konsultacje i korekty' : 'Regular consultations and corrections'
       ]
     },
     {
-      name: 'Coaching Online',
-      price: '150',
-      duration: '1 miesiac',
-      description: 'Miesieczne wsparcie online z planem treningowym i zywieniowym',
+      name: language === 'pl' ? 'Coaching Online' : 'Online Coaching',
+      price: language === 'pl' ? '150' : '150',
+      duration: language === 'pl' ? '1 miesiac' : '1 month',
+      description: language === 'pl' ? 'Miesieczne wsparcie online z planem treningowym i zywieniowym' : 'Monthly online support with training and nutrition plan',
       features: [
-        'Indywidualny plan treningowy',
-        'Plan zywieniowy',
-        'Cotygodniowe konsultacje online',
-        'Monitoring postepow',
-        'Wsparcie motywacyjne 24/7'
+        language === 'pl' ? 'Indywidualny plan treningowy' : 'Individual training plan',
+        language === 'pl' ? 'Plan zywieniowy' : 'Nutrition plan',
+        language === 'pl' ? 'Cotygodniowe konsultacje online' : 'Weekly online consultations',
+        language === 'pl' ? 'Monitoring postepow' : 'Progress monitoring',
+        language === 'pl' ? 'Wsparcie motywacyjne 24/7' : '24/7 motivational support'
       ]
     },
     {
-      name: 'Porada Dietetyczna',
-      price: '100',
-      description: 'Konsultacja zywieniowa i doradztwo w zakresie suplementacji',
+      name: language === 'pl' ? 'Porada Dietetyczna' : 'Nutritional Advice',
+      price: language === 'pl' ? '100' : '100',
+      description: language === 'pl' ? 'Konsultacja zywieniowa i doradztwo w zakresie suplementacji' : 'Nutritional consultation and supplementation advice',
       features: [
-        'Analiza aktualnej diety',
-        'Indywidualny plan zywieniowy',
-        'Doradztwo suplementacyjne',
-        'Wskazowki praktyczne',
-        'Materialy edukacyjne'
+        language === 'pl' ? 'Analiza aktualnej diety' : 'Current diet analysis',
+        language === 'pl' ? 'Indywidualny plan zywieniowy' : 'Individual nutrition plan',
+        language === 'pl' ? 'Doradztwo suplementacyjne' : 'Supplementation advice',
+        language === 'pl' ? 'Wskazowki praktyczne' : 'Practical tips',
+        language === 'pl' ? 'Materialy edukacyjne' : 'Educational materials'
       ]
     },
     {
-      name: 'Prep Coaching Kulturystyczny',
-      price: '500',
-      duration: '1 miesiac',
-      description: 'Specjalistyczne przygotowanie do zawodow kulturystycznych',
+      name: language === 'pl' ? 'Prep Coaching Kulturystyczny' : 'Bodybuilding Prep Coaching',
+      price: language === 'pl' ? '500' : '500',
+      duration: language === 'pl' ? '1 miesiac' : '1 month',
+      description: language === 'pl' ? 'Specjalistyczne przygotowanie do zawodow kulturystycznych' : 'Specialized preparation for bodybuilding competitions',
       features: [
-        'Plan treningowy przedzawodowy',
-        'Szczegolowa dieta przedzawodowa',
-        'Coaching pozowania',
-        'Wsparcie psychologiczne',
-        'Monitoring skladu ciala'
+        language === 'pl' ? 'Plan treningowy przedzawodowy' : 'Pre-competition training plan',
+        language === 'pl' ? 'Szczegolowa dieta przedzawodowa' : 'Detailed pre-competition diet',
+        language === 'pl' ? 'Coaching pozowania' : 'Posing coaching',
+        language === 'pl' ? 'Wsparcie psychologiczne' : 'Psychological support',
+        language === 'pl' ? 'Monitoring skladu ciala' : 'Body composition monitoring'
       ]
     }
   ]
@@ -287,19 +288,19 @@ export default function CennikPage() {
         <meta name="keywords" content="trener personalny cena Warszawa, cennik trener personalny Warszawa, trening personalny Warszawa ceny, trener personalny Warszawa umow sie, trener personalny tanio Warszawa" />
       </Head>
 
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-background">
         {/* Header */}
-        <section className="bg-gray-900 text-white section-padding border-b border-gray-700">
-          <div className="container-max text-center">
+        <section className="bg-background text-foreground py-24 px-4 border-b border-border">
+          <div className="container mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('pricing.header.title')}
               </h1>
-              <p className="text-xl font-light max-w-2xl mx-auto text-gray-200">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t('pricing.header.description')}
               </p>
             </motion.div>
@@ -307,18 +308,18 @@ export default function CennikPage() {
         </section>
 
         {/* Well Fitness Packages */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.well.title')}
               </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t('pricing.well.description')}
               </p>
             </motion.div>
@@ -330,32 +331,32 @@ export default function CennikPage() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`relative card ${plan.popular ? 'ring-2 ring-indigo-500 scale-105' : ''} flex flex-col h-full`}
+                  className={`relative glass-card p-8 ${plan.popular ? 'ring-2 ring-primary scale-105' : ''} flex flex-col h-full`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-indigo-600 text-white px-4 py-1 rounded-full text-sm font-bold">
-                        NAJPOPULARNIEJSZY
+                      <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold">
+                        {language === 'pl' ? 'NAJPOPULARNIEJSZY' : 'MOST POPULAR'}
                       </span>
                     </div>
                   )}
                   
                   <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-white mb-2">{t(`pricing.packages.${plan.id}.name`) || plan.name}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                     <div className="mb-2">
-                      <span className="text-3xl font-bold text-indigo-400">{plan.price}</span>
-                      <span className="text-gray-200 font-light"> zl</span>
+                      <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                      <span className="text-muted-foreground"> {language === 'pl' ? 'zl' : 'PLN'}</span>
                     </div>
-                    <p className="text-sm text-gray-300 font-light">{plan.duration}</p>
-                    <p className="text-gray-200 font-light mt-2">{t(`pricing.packages.${plan.id}.description`) || plan.description}</p>
+                    <p className="text-sm text-muted-foreground">{plan.duration}</p>
+                    <p className="text-muted-foreground mt-2">{plan.description}</p>
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckIcon className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-200 font-light text-sm">
-                          {t(`pricing.packages.${plan.id}.features.${featureIndex + 1}`) || feature}
+                        <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground text-sm">
+                          {feature}
                         </span>
                       </li>
                     ))}
@@ -365,7 +366,7 @@ export default function CennikPage() {
                     onClick={handleBookingOpen}
                     className={`w-full ${plan.popular ? 'btn-primary' : 'btn-secondary'} mt-auto`}
                   >
-                    Wybierz Pakiet
+                    {t('common.choose')}
                   </button>
                 </motion.div>
               ))}
@@ -374,18 +375,18 @@ export default function CennikPage() {
         </section>
 
         {/* Pair and Group Training */}
-        <section className="section-padding bg-gray-700">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-background">
+          <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.pair.title')}
               </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t('pricing.pair.description')}
               </p>
             </motion.div>
@@ -397,30 +398,37 @@ export default function CennikPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="card hover:scale-105 transition-transform duration-300 flex flex-col h-full"
+                  className="glass-card p-6 flex flex-col h-full"
                 >
                   <div className="text-center mb-4">
-                    <h3 className="text-lg font-bold text-white mb-3">{service.name}</h3>
-                    <div className="mb-2">
-                      <span className="text-2xl font-bold text-indigo-400">{service.price}</span>
-                      <span className="text-gray-200 font-light"> zl</span>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.name}</h3>
+                    <div className="mb-1">
+                      <span className="text-2xl font-bold text-primary">{service.price}</span>
+                      <span className="text-muted-foreground"> {language === 'pl' ? 'zl' : 'PLN'}</span>
                     </div>
-                    <p className="text-sm text-gray-300 font-light">{service.duration}</p>
-                    <p className="text-gray-200 font-light text-sm mt-2">{service.description}</p>
+                    <p className="text-sm text-muted-foreground">{service.duration}</p>
                   </div>
-                  <ul className="space-y-2 flex-grow mb-4">
+                  
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-2">
-                        <CheckIcon className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-200 font-light text-xs">{feature}</span>
+                        <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground text-xs">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
+                  
                   <button 
                     onClick={handleBookingOpen}
-                    className="w-full btn-secondary text-sm mt-auto"
+                    className="btn-secondary w-full text-sm"
                   >
-                    Wybierz Pakiet
+                    {t('common.choose')}
                   </button>
                 </motion.div>
               ))}
@@ -429,54 +437,61 @@ export default function CennikPage() {
         </section>
 
         {/* Other Locations */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.other.title')}
               </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t('pricing.other.description')}
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {otherLocations.map((service, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="card hover:scale-105 transition-transform duration-300 flex flex-col h-full"
+                  className="glass-card p-6 flex flex-col h-full"
                 >
                   <div className="text-center mb-4">
-                    <h3 className="text-lg font-bold text-white mb-3">{service.name}</h3>
-                    <div className="mb-2">
-                      <span className="text-2xl font-bold text-indigo-400">{service.price}</span>
-                      <span className="text-gray-200 font-light"> zl</span>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.name}</h3>
+                    <div className="mb-1">
+                      <span className="text-2xl font-bold text-primary">{service.price}</span>
+                      <span className="text-muted-foreground"> {language === 'pl' ? 'zl' : 'PLN'}</span>
                     </div>
-                    <p className="text-sm text-gray-300 font-light">{service.duration}</p>
-                    <p className="text-gray-200 font-light text-sm mt-2">{service.description}</p>
+                    <p className="text-sm text-muted-foreground">{service.duration}</p>
                   </div>
-                  <ul className="space-y-2 flex-grow mb-4">
+                  
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-2">
-                        <CheckIcon className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-200 font-light text-sm">{feature}</span>
+                        <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground text-xs">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                  <a 
-                    href="/kontakt"
-                    className="w-full btn-secondary text-sm mt-auto inline-block text-center"
+                  
+                  <button 
+                    onClick={handleBookingOpen}
+                    className="btn-secondary w-full text-sm"
                   >
-                    Skontaktuj sie ze mna
-                  </a>
+                    {t('common.choose')}
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -484,18 +499,18 @@ export default function CennikPage() {
         </section>
 
         {/* Additional Services */}
-        <section className="section-padding bg-gray-700">
-          <div className="container-max">
+        <section className="py-24 px-4 bg-background">
+          <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.additional.title')}
               </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 {t('pricing.additional.description')}
               </p>
             </motion.div>
@@ -507,120 +522,104 @@ export default function CennikPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="card hover:scale-105 transition-transform duration-300 flex flex-col h-full"
+                  className="glass-card p-6 flex flex-col h-full"
                 >
                   <div className="text-center mb-4">
-                    <h3 className="text-lg font-bold text-white mb-3">{service.name}</h3>
-                    <div className="mb-2">
-                      <span className="text-2xl font-bold text-indigo-400">{service.price}</span>
-                      <span className="text-gray-200 font-light"> zl</span>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{service.name}</h3>
+                    <div className="mb-1">
+                      <span className="text-2xl font-bold text-primary">{service.price}</span>
+                      <span className="text-muted-foreground"> {language === 'pl' ? 'zl' : 'PLN'}</span>
                     </div>
-                    {service.duration && (
-                      <p className="text-sm text-gray-300 font-light">{service.duration}</p>
-                    )}
-                    <p className="text-gray-200 font-light text-sm mt-2">{service.description}</p>
+                    <p className="text-sm text-muted-foreground">{service.duration}</p>
                   </div>
-                  <ul className="space-y-2 flex-grow mb-4">
+                  
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-2">
-                        <CheckIcon className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-200 font-light text-sm">{feature}</span>
+                        <CheckIcon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground text-xs">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                  <a 
-                    href="/kontakt"
-                    className="w-full btn-secondary text-sm mt-auto inline-block text-center"
+                  
+                  <button 
+                    onClick={handleBookingOpen}
+                    className="btn-secondary w-full text-sm"
                   >
-                    Skontaktuj sie ze mna
-                  </a>
+                    {t('common.choose')}
+                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  {t('pricing.benefits.title')}
-                </h2>
-                <ul className="space-y-4">
-                  {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckIcon className="w-5 h-5 text-indigo-400 flex-shrink-0" />
-                      <span className="font-light text-gray-200">{t(`pricing.benefits.${num}`)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+        {/* Benefits Section */}
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t('pricing.benefits.title')}
+              </h2>
+            </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="card"
-              >
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {t('pricing.contact.title') || 'Masz Pytania o Cennik?'}
-                </h3>
-                <p className="text-gray-200 font-light mb-6">
-                  {t('pricing.contact.description') || 'Skontaktuj sie ze mna, aby omowic szczegoly pakietow treningowych i znalezc rozwiazanie idealne dla Ciebie.'}
-                </p>
-                <div className="space-y-3">
-                  <p className="flex items-center space-x-2">
-                    <span className="font-bold text-white">📞</span>
-                    <span className="font-light text-gray-200">+48 123 456 789</span>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span className="font-bold text-white">📧</span>
-                    <span className="font-light text-gray-200">kontakt@hypertraining.pl</span>
-                  </p>
-                </div>
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                t('pricing.benefits.1'),
+                t('pricing.benefits.2'),
+                t('pricing.benefits.3'),
+                t('pricing.benefits.4'),
+                t('pricing.benefits.5'),
+                t('pricing.benefits.6')
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="glass-card p-6 flex items-start space-x-3"
+                >
+                  <CheckIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">
+                    {benefit}
+                  </span>
+                </motion.div>
+              ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mt-12"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                {t('pricing.contact.title')}
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                {t('pricing.contact.description')}
+              </p>
+              <button 
+                onClick={handleBookingOpen}
+                className="btn-primary inline-flex items-center"
+              >
+                {t('common.contact')}
+              </button>
+            </motion.div>
           </div>
         </section>
       </div>
-
-      {/* Booking Widget Modal */}
-      {isBookingOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-800/95 backdrop-blur-md rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto border border-gray-700/50">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-white">Umow Trening</h2>
-              <button
-                onClick={() => setIsBookingOpen(false)}
-                className="p-2 hover:bg-gray-700/50 rounded-lg text-gray-400 hover:text-white transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-green-600 text-2xl">✓</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Dziekuje za zainteresowanie!</h3>
-              <p className="text-gray-300 font-light mb-6">Aby umowic trening, skontaktuj sie ze mna bezposrednio:</p>
-              <div className="space-y-3">
-                <a href="tel:+48123456789" className="btn-primary w-full">
-                  📞 Zadzwon Teraz
-                </a>
-                <a href="mailto:kontakt@hypertraining.pl" className="btn-secondary w-full">
-                  📧 Wyslij Email
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   )
 }

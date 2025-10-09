@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { ChevronDownIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '../contexts/LanguageContext'
 
 export default function FAQPage() {
@@ -75,28 +75,28 @@ export default function FAQPage() {
         <meta name="keywords" content="jak zacząć przygodę z trenerem personalnym, ile razy w tygodniu ćwiczyć z trenerem personalnym, korzyści z treningu personalnego, po czym poznać dobrego trenera personalnego" />
       </Head>
 
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-background">
         {/* Header */}
-        <section className="bg-gray-900 text-white section-padding border-b border-gray-700">
-          <div className="container-max text-center">
+        <section className="bg-background text-foreground py-24 px-4 border-b border-border">
+          <div className="container mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('faq.header.title')}
               </h1>
-              <p className="text-xl font-light max-w-2xl mx-auto text-gray-200">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t('faq.header.description')}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="section-padding bg-gray-800">
-          <div className="container-max max-w-4xl">
+        {/* FAQ Content */}
+        <section className="py-24 px-4 bg-card">
+          <div className="container mx-auto max-w-4xl">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <motion.div
@@ -104,17 +104,17 @@ export default function FAQPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="card"
+                  className="glass-card p-6"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex justify-between items-center text-left"
                   >
-                    <h3 className="text-lg font-bold text-white pr-4">
+                    <h3 className="text-lg font-bold text-foreground pr-4">
                       {t(`faq.q${index + 1}`) || faq.question}
                     </h3>
                     <ChevronDownIcon
-                      className={`w-5 h-5 text-gray-300 transition-transform duration-200 flex-shrink-0 ${
+                      className={`w-5 h-5 text-muted-foreground transition-transform duration-200 flex-shrink-0 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -129,8 +129,8 @@ export default function FAQPage() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-4 border-t border-gray-600 mt-4">
-                          <p className="text-gray-200 font-light leading-relaxed">
+                        <div className="pt-4 border-t border-border mt-4">
+                          <p className="text-muted-foreground leading-relaxed">
                             {t(`faq.a${index + 1}`) || faq.answer}
                           </p>
                         </div>
@@ -143,26 +143,28 @@ export default function FAQPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="section-padding bg-gray-700 text-white">
-          <div className="container-max text-center">
+        {/* CTA Section */}
+        <section className="py-24 px-4 bg-background">
+          <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl font-bold mb-4 text-white">
+              <h2 className="text-3xl font-bold mb-4 text-foreground">
                 {t('faq.cta.title')}
               </h2>
-              <p className="text-xl font-light mb-8 max-w-2xl mx-auto text-gray-200">
+              <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
                 {t('faq.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+48123456789" className="btn-secondary">
-                  📞 {t('faq.cta.call')}
+                <a href="tel:+48123456789" className="btn-secondary inline-flex items-center justify-center">
+                  <PhoneIcon className="w-5 h-5 mr-2" />
+                  {t('faq.cta.call')}
                 </a>
-                <a href="mailto:kontakt@hypertraining.pl" className="btn-primary">
-                  📧 {t('faq.cta.email')}
+                <a href="mailto:kontakt@hypertraining.pl" className="btn-primary inline-flex items-center justify-center">
+                  <EnvelopeIcon className="w-5 h-5 mr-2" />
+                  {t('faq.cta.email')}
                 </a>
               </div>
             </motion.div>
