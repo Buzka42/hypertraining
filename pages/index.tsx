@@ -46,8 +46,8 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
-        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-4 w-full">
-          <div className="space-y-8 animate-slide-up">
+        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-0 w-full max-w-full">
+          <div className="space-y-8 animate-slide-up px-4">
             <h1 className="text-4xl md:text-7xl font-bold leading-tight">
               {t('home.hero.title')}
               <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
@@ -80,7 +80,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <div className="relative animate-slide-up px-4" style={{ animationDelay: "0.2s" }}>
             <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl overflow-hidden" />
             <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
               <Image 
