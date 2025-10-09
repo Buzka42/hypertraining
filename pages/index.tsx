@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
             
             <div className="relative w-full">
-              <div className="relative w-full h-0 pb-[75%] rounded-3xl shadow-2xl overflow-hidden">
+              <div className="relative w-full h-auto rounded-3xl shadow-2xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
