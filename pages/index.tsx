@@ -45,51 +45,55 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
-        <div className="w-full max-w-full px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center w-full max-w-6xl mx-auto">
-            <div className="space-y-6 animate-slide-up">
-              <h1 className="text-3xl md:text-6xl font-bold leading-tight">
-                {t('home.hero.title')}
-                <span className="text-shimmer block mt-1">{t('home.hero.subtitle')}</span>
-                <span className="block mt-1">{t('home.hero.location')}</span>
-              </h1>
+      <section id="home" className="min-h-screen w-full overflow-hidden pt-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24">
+            <div className="space-y-8">
+              <div className="animate-slide-up">
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                  {t('home.hero.title')}
+                  <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2">{t('home.hero.location')}</span>
+                </h1>
+              </div>
               
-              <p className="text-base md:text-lg text-muted-foreground">
-                {t('home.hero.description')}
-              </p>
+              <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  {t('home.hero.description')}
+                </p>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/kontakt" className="btn-primary w-full sm:w-auto text-sm md:text-base px-4 md:px-8 py-2 md:py-3">
+              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+                <Link href="/kontakt" className="btn-primary w-full sm:w-auto">
                   {t('home.hero.cta.primary')}
-                  <ArrowRightIcon className="ml-1 w-4 h-4 md:w-5 md:h-5" />
+                  <ArrowRightIcon className="ml-2 w-5 h-5" />
                 </Link>
-                <Link href="/cennik" className="btn-secondary w-full sm:w-auto text-sm md:text-base px-4 md:px-8 py-2 md:py-3">
+                <Link href="/cennik" className="btn-secondary w-full sm:w-auto">
                   {t('home.hero.cta.secondary')}
                 </Link>
               </div>
               
-              <div className="flex gap-6 pt-3">
+              <div className="flex gap-8 pt-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
                 <div>
-                  <div className="text-2xl md:text-3xl font-bold text-shimmer">100%</div>
-                  <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
+                  <div className="text-4xl font-bold text-shimmer">100%</div>
+                  <div className="text-muted-foreground">{t('home.hero.satisfiedClients')}</div>
                 </div>
                 <div>
-                  <div className="text-2xl md:text-3xl font-bold text-shimmer">14+</div>
-                  <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
+                  <div className="text-4xl font-bold text-shimmer">14+</div>
+                  <div className="text-muted-foreground">{t('home.hero.yearsExperience')}</div>
                 </div>
               </div>
             </div>
             
-            <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            <div className="relative animate-slide-up" style={{ animationDelay: "0.4s" }}>
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" />
-              <div className="relative w-full h-full min-h-[180px] md:min-h-[400px] rounded-3xl shadow-2xl overflow-hidden" style={{ maxWidth: '100%' }}>
+              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
                   fill
                   className="object-cover"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                 />
               </div>
