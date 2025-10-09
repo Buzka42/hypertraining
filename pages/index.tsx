@@ -46,7 +46,7 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full overflow-x-hidden pt-16 max-w-full">
-        <div className="px-4 md:px-6 py-12 md:py-24 max-w-full w-full">
+        <div className="px-4 md:px-8 lg:px-16 py-12 md:py-24 max-w-full w-full">
           {/* Mobile layout - single column */}
           <div className="block lg:hidden space-y-8 max-w-full w-full">
             <div>
@@ -86,7 +86,7 @@ export default function HomePage() {
             
             <div className="relative max-w-full mt-8 md:mt-0 w-full">
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
-              <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
+              <div className="relative w-full h-full min-h-[250px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
@@ -140,7 +140,7 @@ export default function HomePage() {
             
             <div className="relative max-w-full w-full">
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
-              <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
+              <div className="relative w-full h-full min-h-[250px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
