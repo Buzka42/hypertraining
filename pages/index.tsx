@@ -47,8 +47,8 @@ export default function HomePage() {
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full overflow-hidden pt-16">
         <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-full">
-          <div className="max-w-full">
-            <div className="space-y-8 max-w-full">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-full">
+            <div className="space-y-8">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-full overflow-hidden">
                   {t('home.hero.title')}
