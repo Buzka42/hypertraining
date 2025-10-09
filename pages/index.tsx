@@ -87,7 +87,7 @@ export default function HomePage() {
             
             <div className="relative max-w-full mt-8 md:mt-0 w-full">
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
-              <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full">
+              <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
