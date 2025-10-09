@@ -85,7 +85,7 @@ const InteractiveBackground = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-hero" />
       
