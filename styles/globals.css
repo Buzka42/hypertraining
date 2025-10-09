@@ -262,10 +262,15 @@ img {
   animation: shimmer 8s ease-in-out infinite;
   display: inline-block;
   opacity: 0.7;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .text-shimmer {
+    white-space: nowrap;
+  }
 }
 
 @keyframes shimmer {
