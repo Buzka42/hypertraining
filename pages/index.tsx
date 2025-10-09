@@ -53,8 +53,8 @@ export default function HomePage() {
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                   {t('home.hero.title')}
                 </h1>
-                <span className="text-shimmer block mt-2 text-2xl md:text-4xl">{t('home.hero.subtitle')}</span>
-                <span className="block mt-2 text-xl md:text-2xl">{t('home.hero.location')}</span>
+                <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
+                <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
               </div>
               
               <div>
