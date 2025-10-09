@@ -101,6 +101,19 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Add this to help debug layout issues */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure sections span full width */
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .btn-primary {
@@ -195,8 +208,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-
-
 /* Custom animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -233,3 +244,12 @@ body {
 .animate-slide-up {
   animation: slide-up 0.6s ease-out;
 }
+
+/* Debugging - highlight elements that might be causing overflow */
+/*
+@media (max-width: 768px) {
+  * {
+    outline: 1px solid red;
+  }
+}
+*/
