@@ -47,8 +47,8 @@ export default function HomePage() {
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full overflow-hidden pt-16">
         <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-full">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-full">
-            <div className="space-y-8">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center max-w-full">
+            <div className="space-y-8 flex-1">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-full overflow-hidden">
                   {t('home.hero.title')}
@@ -85,7 +85,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="relative max-w-full mt-8 md:mt-0">
+            <div className="relative max-w-full mt-8 md:mt-0 flex-1">
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full" style={{ maxWidth: '100%', position: 'absolute' }}></div>
               <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
                 <Image 
