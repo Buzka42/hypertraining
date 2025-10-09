@@ -109,11 +109,22 @@ body {
   box-sizing: border-box;
 }
 
-/* Ensure sections span full width */
+/* Ensure sections span full width without overflow */
 section {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Prevent images from causing overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent elements with absolute positioning from causing overflow */
+[class*="absolute"] {
+  max-width: 100%;
 }
 
 .btn-primary {

@@ -45,55 +45,54 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="min-h-screen w-full overflow-hidden pt-16">
-        <div className="w-full max-w-full px-0">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24 px-4 md:px-6 max-w-full">
-            <div className="space-y-8 max-w-full">
-              <div className="animate-slide-up max-w-full">
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-full">
+      <section id="home" className="w-full overflow-hidden pt-16">
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                   {t('home.hero.title')}
-                  <span className="text-shimmer block mt-2 max-w-full">{t('home.hero.subtitle')}</span>
-                  <span className="block mt-2 max-w-full">{t('home.hero.location')}</span>
+                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2 text-xl md:text-2xl">{t('home.hero.location')}</span>
                 </h1>
               </div>
               
-              <div className="max-w-full">
-                <p className="text-lg md:text-xl text-muted-foreground max-w-full">
+              <div>
+                <p className="text-base md:text-lg text-muted-foreground">
                   {t('home.hero.description')}
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 max-w-full">
-                <Link href="/kontakt" className="btn-primary w-full sm:w-auto max-w-full">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/kontakt" className="btn-primary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
                   {t('home.hero.cta.primary')}
-                  <ArrowRightIcon className="ml-2 w-5 h-5" />
+                  <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
                 </Link>
-                <Link href="/cennik" className="btn-secondary w-full sm:w-auto max-w-full">
+                <Link href="/cennik" className="btn-secondary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
                   {t('home.hero.cta.secondary')}
                 </Link>
               </div>
               
-              <div className="flex gap-8 pt-4 max-w-full">
-                <div className="max-w-full">
-                  <div className="text-4xl font-bold text-shimmer max-w-full">100%</div>
-                  <div className="text-muted-foreground max-w-full">{t('home.hero.satisfiedClients')}</div>
+              <div className="flex gap-6 pt-4">
+                <div>
+                  <div className="text-3xl font-bold text-shimmer">100%</div>
+                  <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
                 </div>
-                <div className="max-w-full">
-                  <div className="text-4xl font-bold text-shimmer max-w-full">14+</div>
-                  <div className="text-muted-foreground max-w-full">{t('home.hero.yearsExperience')}</div>
+                <div>
+                  <div className="text-3xl font-bold text-shimmer">14+</div>
+                  <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
                 </div>
               </div>
             </div>
             
-            <div className="relative max-w-full">
-              <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-3xl" style={{ maxWidth: '100%', overflow: 'hidden' }} />
-              <div className="relative w-full h-full min-h-[150px] md:min-h-[400px] rounded-3xl shadow-2xl overflow-hidden max-w-full">
+            <div className="relative w-full">
+              <div className="relative w-full h-0 pb-[75%] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
                   fill
-                  className="object-cover max-w-full"
-                  sizes="100vw"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
@@ -407,17 +406,17 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section id="contact" className="py-16 md:py-24 px-4 w-full overflow-hidden bg-gradient-hero">
-        <div className="w-full max-w-full px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mx-auto text-center animate-slide-up"
+            className="mx-auto text-center animate-slide-up max-w-4xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
               <span className="text-shimmer">{t('home.cta.section.title')}</span>
             </h2>
-            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-10 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-10 mx-auto max-w-2xl">
               {t('home.cta.description')}
             </p>
             <Link href="/kontakt" className="inline-flex items-center btn-primary text-base md:text-lg px-4 md:px-8 py-2 md:py-3 w-full sm:w-auto justify-center">

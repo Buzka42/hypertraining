@@ -71,7 +71,7 @@ const RIRGraphVisualization: React.FC = () => {
     : '0';
 
   return (
-    <div className="my-10 p-3 md:p-4 bg-background/50 rounded-xl border border-border max-w-full">
+    <div className="my-10 p-3 md:p-4 bg-background/50 rounded-xl border border-border max-w-full overflow-x-auto">
       <h3 className="text-lg font-bold mb-3 text-center">
         {language === 'pl' 
           ? 'Wpływ Trenera Personalnego na Zyski Mięśniowe' 
@@ -105,7 +105,7 @@ const RIRGraphVisualization: React.FC = () => {
       </div>
       
       {/* Graph Visualization */}
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center w-full min-w-[300px]">
         <div className="w-full bg-background/30 rounded-lg border border-border p-2 md:p-3">
           {/* Chart Header */}
           <div className="flex justify-between mb-2">
