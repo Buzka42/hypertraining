@@ -45,8 +45,8 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-0 w-full">
-        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-4">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
+        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-4 w-full">
           <div className="space-y-8 animate-slide-up">
             <h1 className="text-4xl md:text-7xl font-bold leading-tight">
               {t('home.hero.title')}

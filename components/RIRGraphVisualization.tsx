@@ -71,7 +71,7 @@ const RIRGraphVisualization: React.FC = () => {
     : '0';
 
   return (
-    <div className="my-10 p-4 md:p-6 bg-background/50 rounded-xl border border-border max-w-full overflow-x-auto">
+    <div className="my-10 p-4 md:p-6 bg-background/50 rounded-xl border border-border max-w-full">
       <h3 className="text-lg md:text-xl font-bold mb-4 text-center">
         {language === 'pl' 
           ? 'Wpływ Trenera Personalnego na Zyski Mięśniowe' 
@@ -105,8 +105,8 @@ const RIRGraphVisualization: React.FC = () => {
       </div>
       
       {/* Graph Visualization */}
-      <div className="flex flex-col items-center min-w-[300px]">
-        <div className="w-full bg-background/30 rounded-lg border border-border p-3 md:p-4 md:p-6 max-w-full">
+      <div className="flex flex-col items-center w-full">
+        <div className="w-full bg-background/30 rounded-lg border border-border p-3 md:p-4 md:p-6">
           {/* Chart Header */}
           <div className="flex justify-between mb-2">
             <div className="text-xs text-muted-foreground w-8 md:w-10 md:w-12"></div>
@@ -120,11 +120,11 @@ const RIRGraphVisualization: React.FC = () => {
           
           {/* Chart Data - Using a simple table-like approach */}
           <div className="space-y-3 md:space-y-4">
-            {currentData.withTrainer.map((_, i) => (
+            {currentData.withTrainer.slice(1).map((_, i) => (
               <div key={i} className="flex items-center space-x-1 md:space-x-2 md:space-x-4">
                 {/* Week Label */}
                 <div className="w-8 md:w-10 md:w-12 text-xs text-muted-foreground">
-                  {language === 'pl' ? `Tydz. ${currentData.withTrainer[i].week}` : `Wk ${currentData.withTrainer[i].week}`}
+                  {language === 'pl' ? `Tydz. ${currentData.withTrainer[i+1].week}` : `Wk ${currentData.withTrainer[i+1].week}`}
                 </div>
                 
                 {/* Without Trainer Bar */}
@@ -132,13 +132,10 @@ const RIRGraphVisualization: React.FC = () => {
                   <div 
                     className="h-4 md:h-6 bg-red-400 rounded-l transition-all duration-700 ease-out"
                     style={{ 
-                      width: `${(currentData.withoutTrainer[i].gain / maxValue) * 100}%`,
+                      width: `${(currentData.withoutTrainer[i+1].gain / maxValue) * 100}%`,
                       maxWidth: '100%'
                     }}
                   ></div>
-                  <span className="ml-1 text-xs text-muted-foreground min-w-[16px] md:min-w-[20px] md:min-w-[30px] truncate">
-                    {currentData.withoutTrainer[i].gain}
-                  </span>
                 </div>
                 
                 {/* With Trainer Bar */}
@@ -146,13 +143,10 @@ const RIRGraphVisualization: React.FC = () => {
                   <div 
                     className="h-4 md:h-6 bg-blue-400 rounded-l transition-all duration-700 ease-out"
                     style={{ 
-                      width: `${(currentData.withTrainer[i].gain / maxValue) * 100}%`,
+                      width: `${(currentData.withTrainer[i+1].gain / maxValue) * 100}%`,
                       maxWidth: '100%'
                     }}
                   ></div>
-                  <span className="ml-1 text-xs text-muted-foreground min-w-[16px] md:min-w-[20px] md:min-w-[30px] truncate">
-                    {currentData.withTrainer[i].gain}
-                  </span>
                 </div>
               </div>
             ))}
