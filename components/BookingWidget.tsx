@@ -72,7 +72,7 @@ const BookingWidget: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-card/95 backdrop-blur-md rounded-2xl p-8 w-full max-h-[90vh] overflow-y-auto border border-border"
+              className="bg-card/95 backdrop-blur-md rounded-2xl p-8 w-full max-w-md max-h-[90vh] overflow-y-auto border border-border"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-8">
