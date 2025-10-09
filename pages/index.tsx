@@ -98,7 +98,7 @@ export default function HomePage() {
 
       {/* Why Train With Me Section */}
       <section id="why-train" className="py-24 px-4 bg-card">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -295,7 +295,7 @@ export default function HomePage() {
 
       {/* Maximize Your Gains: The Science Behind Why a Personal Trainer is Essential for RIR Accuracy */}
       <section id="rir-science" className="py-24 px-4 bg-card">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -399,7 +399,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section id="contact" className="py-24 px-4 bg-gradient-hero">
-        <div className="container mx-auto max-w-6xl text-center">
+        <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

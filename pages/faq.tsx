@@ -96,7 +96,7 @@ export default function FAQPage() {
 
         {/* FAQ Content */}
         <section className="py-24 px-4 bg-card">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <motion.div
@@ -145,7 +145,7 @@ export default function FAQPage() {
 
         {/* CTA Section */}
         <section className="py-24 px-4 bg-background">
-          <div className="container mx-auto max-w-4xl text-center">
+          <div className="container mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
