@@ -60,11 +60,11 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/kontakt" className="btn-primary text-sm md:text-base">
+                <Link href="/kontakt" className="btn-primary w-full sm:w-auto text-sm md:text-base px-4 md:px-8 py-2 md:py-3">
                   {t('home.hero.cta.primary')}
                   <ArrowRightIcon className="ml-1 w-4 h-4 md:w-5 md:h-5" />
                 </Link>
-                <Link href="/cennik" className="btn-secondary text-sm md:text-base">
+                <Link href="/cennik" className="btn-secondary w-full sm:w-auto text-sm md:text-base px-4 md:px-8 py-2 md:py-3">
                   {t('home.hero.cta.secondary')}
                 </Link>
               </div>
@@ -416,7 +416,7 @@ export default function HomePage() {
             <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-10 max-w-2xl mx-auto">
               {t('home.cta.description')}
             </p>
-            <Link href="/kontakt" className="inline-flex items-center btn-primary text-base md:text-lg">
+            <Link href="/kontakt" className="inline-flex items-center btn-primary text-base md:text-lg px-4 md:px-8 py-2 md:py-3 w-full sm:w-auto justify-center">
               {t('home.cta.section.button')}
               <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
             </Link>
