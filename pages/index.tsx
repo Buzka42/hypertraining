@@ -45,8 +45,8 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="w-full max-w-full overflow-hidden pt-16">
-        <div className="container mx-auto max-w-full px-4 md:px-6 py-12 md:py-24">
+      <section id="home" className="w-full overflow-hidden pt-16">
+        <div className="px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
               <div className="max-w-full overflow-hidden">
@@ -86,8 +86,8 @@ export default function HomePage() {
             </div>
             
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl"></div>
-              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" style={{ maxWidth: '100%' }}></div>
+              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden" style={{ maxWidth: '100%' }}>
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
