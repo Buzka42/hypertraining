@@ -46,51 +46,53 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
-        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-0 w-full max-w-full">
-          <div className="space-y-8 animate-slide-up px-4">
-            <h1 className="text-4xl md:text-7xl font-bold leading-tight">
-              {t('home.hero.title')}
-              <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
-              <span className="block mt-2">{t('home.hero.location')}</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground">
-              {t('home.hero.description')}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/kontakt" className="btn-primary">
-                {t('home.hero.cta.primary')}
-                <ArrowRightIcon className="ml-2 w-5 h-5" />
-              </Link>
-              <Link href="/cennik" className="btn-secondary">
-                {t('home.hero.cta.secondary')}
-              </Link>
+        <div className="w-full max-w-full px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="space-y-8 animate-slide-up">
+              <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+                {t('home.hero.title')}
+                <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
+                <span className="block mt-2">{t('home.hero.location')}</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-muted-foreground">
+                {t('home.hero.description')}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/kontakt" className="btn-primary">
+                  {t('home.hero.cta.primary')}
+                  <ArrowRightIcon className="ml-2 w-5 h-5" />
+                </Link>
+                <Link href="/cennik" className="btn-secondary">
+                  {t('home.hero.cta.secondary')}
+                </Link>
+              </div>
+              
+              <div className="flex gap-8 pt-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-shimmer">100%</div>
+                  <div className="text-muted-foreground">{t('home.hero.satisfiedClients')}</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-shimmer">14+</div>
+                  <div className="text-muted-foreground">{t('home.hero.yearsExperience')}</div>
+                </div>
+              </div>
             </div>
             
-            <div className="flex gap-8 pt-4">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-shimmer">100%</div>
-                <div className="text-muted-foreground">{t('home.hero.satisfiedClients')}</div>
+            <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl overflow-hidden" />
+              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+                <Image 
+                  src="/hero-fitness.jpg" 
+                  alt="Elite Training" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                />
               </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-shimmer">14+</div>
-                <div className="text-muted-foreground">{t('home.hero.yearsExperience')}</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative animate-slide-up px-4" style={{ animationDelay: "0.2s" }}>
-            <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl overflow-hidden" />
-            <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
-              <Image 
-                src="/hero-fitness.jpg" 
-                alt="Elite Training" 
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority
-              />
             </div>
           </div>
         </div>
