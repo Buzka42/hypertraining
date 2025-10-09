@@ -175,7 +175,7 @@ const ScientificDataVisualization: React.FC = () => {
         <h4 className="text-xl font-bold mb-4 text-foreground text-center">
           {language === 'pl' ? 'Skuteczność Hipertrofii vs Utracone Zyski' : 'Hypertrophy Effectiveness vs Missed Gains'}
         </h4>
-        <div className="min-w-full md:min-w-0">
+        <div className="w-full">
           <div className="h-64 flex items-end space-x-2 justify-center px-4" style={{ minWidth: '100%', maxWidth: '100%' }}>
             {currentData.map((point, index) => (
               <div key={index} className="flex flex-col items-center flex-shrink-0" style={{ width: '8%' }}>

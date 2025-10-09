@@ -82,7 +82,7 @@ export default function HomePage() {
           
           <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <div className="absolute -inset-4 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" />
-            <div className="relative w-full h-full min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full min-h-[300px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
               <Image 
                 src="/hero-fitness.jpg" 
                 alt="Elite Training" 
