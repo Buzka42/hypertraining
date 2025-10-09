@@ -47,15 +47,15 @@ export default function HomePage() {
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
         <div className="w-full max-w-full px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center w-full max-w-6xl mx-auto">
             <div className="space-y-6 animate-slide-up">
-              <h1 className="text-2xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-6xl font-bold leading-tight">
                 {t('home.hero.title')}
-                <span className="text-shimmer block mt-1 text-xl md:text-4xl">{t('home.hero.subtitle')}</span>
-                <span className="block mt-1 text-xl md:text-3xl">{t('home.hero.location')}</span>
+                <span className="text-shimmer block mt-1">{t('home.hero.subtitle')}</span>
+                <span className="block mt-1">{t('home.hero.location')}</span>
               </h1>
               
-              <p className="text-base text-muted-foreground">
+              <p className="text-base md:text-lg text-muted-foreground">
                 {t('home.hero.description')}
               </p>
               
@@ -71,11 +71,11 @@ export default function HomePage() {
               
               <div className="flex gap-6 pt-3">
                 <div>
-                  <div className="text-2xl font-bold text-shimmer">100%</div>
+                  <div className="text-2xl md:text-3xl font-bold text-shimmer">100%</div>
                   <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-shimmer">14+</div>
+                  <div className="text-2xl md:text-3xl font-bold text-shimmer">14+</div>
                   <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
                 </div>
               </div>
