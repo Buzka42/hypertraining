@@ -47,7 +47,60 @@ export default function HomePage() {
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="w-full overflow-x-hidden pt-16 max-w-full">
         <div className="px-4 md:px-6 py-12 md:py-24 max-w-full w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-full w-full">
+          {/* Mobile layout - single column */}
+          <div className="block lg:hidden space-y-8 max-w-full w-full">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+                {t('home.hero.title')}
+                <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
+                <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
+              </h1>
+            </div>
+            
+            <div>
+              <p className="text-base md:text-lg text-muted-foreground">
+                {t('home.hero.description')}
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <Link href="/kontakt" className="btn-primary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
+                {t('home.hero.cta.primary')}
+                <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+              </Link>
+              <Link href="/cennik" className="btn-secondary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
+                {t('home.hero.cta.secondary')}
+              </Link>
+            </div>
+            
+            <div className="flex gap-6 pt-4 w-full">
+              <div>
+                <div className="text-3xl font-bold text-shimmer">100%</div>
+                <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-shimmer">14+</div>
+                <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
+              </div>
+            </div>
+            
+            <div className="relative max-w-full mt-8 md:mt-0 w-full">
+              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
+              <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
+                <Image 
+                  src="/hero-fitness.jpg" 
+                  alt="Elite Training" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop layout - two columns */}
+          <div className="hidden lg:grid grid-cols-2 gap-8 md:gap-12 items-center max-w-full w-full">
             <div className="space-y-8 w-full max-w-full">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -85,7 +138,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="relative max-w-full mt-8 md:mt-0 w-full">
+            <div className="relative max-w-full w-full">
               <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
               <div className="relative w-full h-full min-h-[150px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
                 <Image 
