@@ -45,16 +45,16 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4">
-        <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-0 w-full">
+        <div className="container mx-auto grid md:grid-cols-2 gap-6 md:gap-12 items-center px-4">
           <div className="space-y-8 animate-slide-up">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-7xl font-bold leading-tight">
               {t('home.hero.title')}
               <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
               <span className="block mt-2">{t('home.hero.location')}</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               {t('home.hero.description')}
             </p>
             
@@ -70,19 +70,19 @@ export default function HomePage() {
             
             <div className="flex gap-8 pt-4">
               <div>
-                <div className="text-4xl font-bold text-shimmer">100%</div>
+                <div className="text-3xl md:text-4xl font-bold text-shimmer">100%</div>
                 <div className="text-muted-foreground">{t('home.hero.satisfiedClients')}</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-shimmer">14+</div>
+                <div className="text-3xl md:text-4xl font-bold text-shimmer">14+</div>
                 <div className="text-muted-foreground">{t('home.hero.yearsExperience')}</div>
               </div>
             </div>
           </div>
           
           <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <div className="absolute -inset-4 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" />
-            <div className="relative w-full h-full min-h-[300px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl overflow-hidden" />
+            <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
               <Image 
                 src="/hero-fitness.jpg" 
                 alt="Elite Training" 
@@ -302,22 +302,22 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16 animate-slide-up"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-shimmer">{t('home.scientific.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto">
               {t('home.scientific.description')}
             </p>
           </motion.div>
 
-          <div className="glass-card p-8 md:p-12">
-            <div className="prose prose-lg text-foreground">
-              <h3 className="text-2xl font-bold mb-4">{t('home.scientific.intro.title')}</h3>
-              <p className="mb-6">
+          <div className="glass-card p-4 md:p-12 max-w-full overflow-x-auto">
+            <div className="prose prose-sm md:prose-lg text-foreground min-w-[300px]">
+              <h3 className="text-xl md:text-2xl font-bold mb-4">{t('home.scientific.intro.title')}</h3>
+              <p className="mb-4 md:mb-6">
                 {t('home.scientific.intro.1')}
               </p>
 
-              <h3 className="text-2xl font-bold mb-4 mt-8">{t('home.scientific.novice.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.novice.title')}</h3>
               <p className="mb-4">
                 {t('home.scientific.novice.1')}
               </p>
@@ -325,7 +325,7 @@ export default function HomePage() {
                 {t('home.scientific.novice.2')}
               </p>
 
-              <h3 className="text-2xl font-bold mb-4 mt-8">{t('home.scientific.trainer.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.trainer.title')}</h3>
               <p className="mb-4">
                 {t('home.scientific.trainer.1')}
               </p>
@@ -333,19 +333,21 @@ export default function HomePage() {
                 {t('home.scientific.trainer.2')}
               </p>
 
-              <h3 className="text-2xl font-bold mb-4 mt-8">{t('home.scientific.science.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.science.title')}</h3>
               <p className="mb-4">
                 {t('home.scientific.science.1')}
               </p>
-              <p className="mb-6">
+              <p className="mb-4 md:mb-6">
                 {t('home.scientific.science.2')}
               </p>
 
               {/* Graph Visualization */}
-              <RIRGraphVisualization />
+              <div className="overflow-x-auto max-w-full">
+                <RIRGraphVisualization />
+              </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border border-primary/20">
-                <p className="text-center font-bold text-lg">
+              <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border border-primary/20">
+                <p className="text-center font-bold text-base md:text-lg">
                   {t('home.scientific.conclusion')}
                 </p>
               </div>
