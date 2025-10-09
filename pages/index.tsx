@@ -46,8 +46,8 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen w-full overflow-hidden pt-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24">
+        <div className="w-full px-0">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24 px-4 md:px-6">
             <div className="space-y-8">
               <div className="animate-slide-up">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight">
