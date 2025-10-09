@@ -12,10 +12,10 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <BookingProvider>
-      <div className="min-h-screen flex flex-col relative w-full max-w-full overflow-x-hidden">
+      <div className="min-h-screen flex flex-col relative w-full max-w-full">
         <InteractiveBackground />
         <Header />
-        <main className="flex-grow relative z-10 w-full max-w-full overflow-x-hidden">
+        <main className="flex-grow relative z-10 w-full max-w-full">
           {children}
         </main>
         <Footer />

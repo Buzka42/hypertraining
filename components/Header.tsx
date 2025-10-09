@@ -26,8 +26,8 @@ const Header: React.FC = () => {
       <nav className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-4 group max-w-[70%]">
-            <div className="relative w-12 h-12 flex-shrink-0">
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="relative w-12 h-12">
               <Image 
                 src="/logo.png" 
                 alt="HyperTraining Logo" 
@@ -35,9 +35,9 @@ const Header: React.FC = () => {
                 fill
               />
             </div>
-            <div className="overflow-hidden">
-              <h1 className="text-xl font-bold text-shimmer truncate">HyperTraining</h1>
-              <p className="text-[10px] text-muted-foreground font-light uppercase tracking-wider truncate">PATRYK DĘBOWSKI</p>
+            <div>
+              <h1 className="text-xl font-bold text-shimmer">HyperTraining</h1>
+              <p className="text-[10px] text-muted-foreground font-light uppercase tracking-wider">PATRYK DĘBOWSKI</p>
             </div>
           </Link>
 

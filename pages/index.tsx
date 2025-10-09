@@ -45,8 +45,8 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="w-full overflow-hidden pt-16">
-        <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+      <section id="home" className="w-full pt-16">
+        <div className="px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
               <div>
@@ -85,14 +85,14 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="relative w-full">
-              <div className="relative w-full h-auto rounded-3xl shadow-2xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+            <div className="relative">
+              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="100vw"
                   priority
                 />
               </div>
@@ -102,8 +102,8 @@ export default function HomePage() {
       </section>
 
       {/* Why Train With Me Section */}
-      <section id="why-train" className="py-24 px-4 bg-card">
-        <div className="container mx-auto">
+      <section id="why-train" className="py-24 px-4 bg-card w-full">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -299,8 +299,8 @@ export default function HomePage() {
       </section>
 
       {/* Maximize Your Gains: The Science Behind Why a Personal Trainer is Essential for RIR Accuracy */}
-      <section id="rir-science" className="py-24 px-4 bg-card">
-        <div className="container mx-auto">
+      <section id="rir-science" className="py-24 px-4 bg-card w-full">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,8 +362,8 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="results" className="py-24 px-4 bg-gradient-to-b from-background to-background/50">
-        <div className="container mx-auto">
+      <section id="results" className="py-24 px-4 bg-gradient-to-b from-background to-background/50 w-full">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -405,8 +405,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-16 md:py-24 px-4 w-full overflow-hidden bg-gradient-hero">
-        <div className="container mx-auto px-4 md:px-6">
+      <section id="contact" className="py-16 md:py-24 px-4 w-full bg-gradient-hero">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -428,8 +428,8 @@ export default function HomePage() {
       </section>
 
       {/* Services Section - Moved to bottom as requested */}
-      <section id="services" className="py-24 px-4 bg-card">
-        <div className="container mx-auto">
+      <section id="services" className="py-24 px-4 bg-card w-full">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -487,8 +487,8 @@ export default function HomePage() {
       </section>
 
       {/* Features Section - Moved to bottom as requested */}
-      <section id="features" className="py-24 px-4 bg-card">
-        <div className="container mx-auto">
+      <section id="features" className="py-24 px-4 bg-card w-full">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

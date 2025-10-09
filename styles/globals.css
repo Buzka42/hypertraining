@@ -101,7 +101,6 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -113,14 +112,12 @@ body {
 /* Comprehensive overflow prevention */
 html, body, div, section, main, header, footer, nav {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* Ensure sections span full width without overflow */
 section {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* Prevent images from causing overflow */
@@ -137,13 +134,11 @@ img {
 /* Prevent elements with negative margins from causing overflow */
 [class*="-inset-"], [class*="-ml-"], [class*="-mr-"], [class*="-left-"], [class*="-right-"] {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* Ensure all container elements respect width constraints */
 .container, .container-fluid, .grid, .flex {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* Prevent text elements from causing overflow */
@@ -151,7 +146,6 @@ img {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-  max-width: 100%;
 }
 
 .btn-primary {
@@ -295,41 +289,3 @@ img {
   }
 }
 */
-
-/* Prevent all elements from causing horizontal overflow */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Ensure all sections and containers respect width constraints */
-section, .container, .grid, .flex {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Specifically target the hero section */
-#home {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Prevent images from overflowing */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Ensure absolutely positioned elements don't cause overflow */
-[class*="absolute"] {
-  max-width: 100%;
-}
-
-/* Ensure elements with negative margins don't cause overflow */
-[class*="-inset-"] {
-  max-width: 100%;
-}
