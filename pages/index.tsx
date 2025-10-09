@@ -46,7 +46,7 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 w-full overflow-hidden">
-        <div className="w-full max-w-full px-4 md:px-6">
+        <div className="w-full max-w-full px-4 md:px-6 overflow-hidden">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center w-full max-w-6xl mx-auto">
             <div className="space-y-6 animate-slide-up">
               <h1 className="text-3xl md:text-6xl font-bold leading-tight">
@@ -82,7 +82,7 @@ export default function HomePage() {
             </div>
             
             <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl overflow-hidden" />
+              <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-3xl overflow-hidden" />
               <div className="relative w-full h-full min-h-[180px] md:min-h-[400px] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-fitness.jpg" 
