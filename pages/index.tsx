@@ -93,7 +93,7 @@ export default function HomePage() {
                   alt="Elite Training" 
                   fill
                   className="object-cover"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
