@@ -300,7 +300,7 @@ export default function CennikPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('pricing.header.title')}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('pricing.header.description')}
               </p>
             </motion.div>
@@ -319,7 +319,7 @@ export default function CennikPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.well.title')}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('pricing.well.description')}
               </p>
             </motion.div>
@@ -386,7 +386,7 @@ export default function CennikPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.pair.title')}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('pricing.pair.description')}
               </p>
             </motion.div>
@@ -448,7 +448,7 @@ export default function CennikPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 {t('pricing.other.title')}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('pricing.other.description')}
               </p>
             </motion.div>
@@ -607,7 +607,7 @@ export default function CennikPage() {
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 {t('pricing.contact.title')}
               </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-6 mx-auto">
                 {t('pricing.contact.description')}
               </p>
               <button 

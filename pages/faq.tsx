@@ -87,7 +87,7 @@ export default function FAQPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('faq.header.title')}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('faq.header.description')}
               </p>
             </motion.div>
@@ -154,7 +154,7 @@ export default function FAQPage() {
               <h2 className="text-3xl font-bold mb-4 text-foreground">
                 {t('faq.cta.title')}
               </h2>
-              <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
+              <p className="text-xl mb-8 mx-auto text-muted-foreground">
                 {t('faq.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

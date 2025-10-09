@@ -81,7 +81,7 @@ export default function ContactPage() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
                 <span className="text-gradient">{t('contact.header.title') || 'Kontakt'}</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-muted-foreground mx-auto">
                 {t('contact.header.description') || 'Skontaktuj się ze mną i rozpocznij swoją przygodę z treningiem personalnym'}
               </p>
             </motion.div>

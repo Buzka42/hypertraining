@@ -49,7 +49,7 @@ export default function AboutPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 {t('about.header.title')}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground mx-auto">
                 {t('about.header.description')}
               </p>
             </motion.div>

@@ -54,7 +54,7 @@ export default function HomePage() {
               <span className="block mt-2">{t('home.hero.location')}</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-lg">
+            <p className="text-xl text-muted-foreground">
               {t('home.hero.description')}
             </p>
             
@@ -108,10 +108,10 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-shimmer">{t('home.why.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground mx-auto">
               {t('home.why.subtitle')}
             </p>
-            <p className="text-lg mt-6 text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg mt-6 text-muted-foreground mx-auto">
               {t('home.why.description')}
             </p>
           </motion.div>
@@ -127,7 +127,7 @@ export default function HomePage() {
               <h3 className="text-3xl font-bold mb-4 text-foreground">
                 {t('home.why.expertise.title')}
               </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground mx-auto">
                 {t('home.why.expertise.description')}
               </p>
             </motion.div>
@@ -205,7 +205,7 @@ export default function HomePage() {
               <h3 className="text-3xl font-bold mb-4 text-foreground">
                 {t('home.why.holistic.title')}
               </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground mx-auto">
                 {t('home.why.holistic.description')}
               </p>
             </motion.div>
@@ -257,7 +257,7 @@ export default function HomePage() {
               <h3 className="text-3xl font-bold mb-4 text-foreground">
                 {t('home.why.tools.title')}
               </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground mx-auto">
                 {t('home.why.tools.description')}
               </p>
             </div>
@@ -305,13 +305,13 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-shimmer">{t('home.scientific.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mx-auto">
               {t('home.scientific.description')}
             </p>
           </motion.div>
 
           <div className="glass-card p-8 md:p-12">
-            <div className="prose prose-lg max-w-none text-foreground">
+            <div className="prose prose-lg text-foreground">
               <h3 className="text-2xl font-bold mb-4">{t('home.scientific.intro.title')}</h3>
               <p className="mb-6">
                 {t('home.scientific.intro.1')}
@@ -366,7 +366,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-shimmer">{t('home.testimonials.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mx-auto">
               {t('home.testimonials.description')}
             </p>
           </motion.div>
@@ -404,7 +404,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto animate-slide-up"
+            className="mx-auto animate-slide-up"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-shimmer">{t('home.cta.section.title')}</span>
@@ -432,7 +432,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-shimmer">{t('home.services.section.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mx-auto">
               {t('home.services.section.description')}
             </p>
           </motion.div>
@@ -491,7 +491,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-shimmer">{t('home.services.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mx-auto">
               {t('home.services.description')}
             </p>
           </motion.div>

@@ -106,7 +106,7 @@ const RIRGraphVisualization: React.FC = () => {
       
       {/* Graph Visualization */}
       <div className="flex flex-col items-center">
-        <div className="w-full max-w-2xl bg-background/30 rounded-lg border border-border p-6">
+        <div className="w-full bg-background/30 rounded-lg border border-border p-6">
           {/* Chart Header */}
           <div className="flex justify-between mb-2">
             <div className="text-xs text-muted-foreground w-12"></div>
