@@ -45,16 +45,16 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section - Updated to match example site */}
-      <section id="home" className="w-full overflow-hidden pt-16">
+      <section id="home" className="w-full pt-16">
         <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-8">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                   {t('home.hero.title')}
+                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2 text-xl md:text-2xl">{t('home.hero.location')}</span>
                 </h1>
-                <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
-                <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
               </div>
               
               <div>
