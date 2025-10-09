@@ -263,17 +263,13 @@ img {
   animation: shimmer 8s ease-in-out infinite;
   display: inline-block;
   opacity: 0.7;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
-@media (min-width: 768px) {
-  .text-shimmer {
-    white-space: nowrap;
-  }
-}
+
 
 @keyframes shimmer {
   0% { background-position: 0% 50%; }
