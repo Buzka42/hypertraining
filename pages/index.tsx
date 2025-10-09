@@ -46,54 +46,54 @@ export default function HomePage() {
 
       {/* Hero Section - Updated to match example site */}
       <section id="home" className="min-h-screen w-full overflow-hidden pt-16">
-        <div className="w-full px-0">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24 px-4 md:px-6">
-            <div className="space-y-8">
-              <div className="animate-slide-up">
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <div className="w-full max-w-full px-0">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-24 px-4 md:px-6 max-w-full">
+            <div className="space-y-8 max-w-full">
+              <div className="animate-slide-up max-w-full">
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-full">
                   {t('home.hero.title')}
-                  <span className="text-shimmer block mt-2">{t('home.hero.subtitle')}</span>
-                  <span className="block mt-2">{t('home.hero.location')}</span>
+                  <span className="text-shimmer block mt-2 max-w-full">{t('home.hero.subtitle')}</span>
+                  <span className="block mt-2 max-w-full">{t('home.hero.location')}</span>
                 </h1>
               </div>
               
-              <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
-                <p className="text-lg md:text-xl text-muted-foreground">
+              <div className="max-w-full">
+                <p className="text-lg md:text-xl text-muted-foreground max-w-full">
                   {t('home.hero.description')}
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <Link href="/kontakt" className="btn-primary w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4 max-w-full">
+                <Link href="/kontakt" className="btn-primary w-full sm:w-auto max-w-full">
                   {t('home.hero.cta.primary')}
                   <ArrowRightIcon className="ml-2 w-5 h-5" />
                 </Link>
-                <Link href="/cennik" className="btn-secondary w-full sm:w-auto">
+                <Link href="/cennik" className="btn-secondary w-full sm:w-auto max-w-full">
                   {t('home.hero.cta.secondary')}
                 </Link>
               </div>
               
-              <div className="flex gap-8 pt-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-                <div>
-                  <div className="text-4xl font-bold text-shimmer">100%</div>
-                  <div className="text-muted-foreground">{t('home.hero.satisfiedClients')}</div>
+              <div className="flex gap-8 pt-4 max-w-full">
+                <div className="max-w-full">
+                  <div className="text-4xl font-bold text-shimmer max-w-full">100%</div>
+                  <div className="text-muted-foreground max-w-full">{t('home.hero.satisfiedClients')}</div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-shimmer">14+</div>
-                  <div className="text-muted-foreground">{t('home.hero.yearsExperience')}</div>
+                <div className="max-w-full">
+                  <div className="text-4xl font-bold text-shimmer max-w-full">14+</div>
+                  <div className="text-muted-foreground max-w-full">{t('home.hero.yearsExperience')}</div>
                 </div>
               </div>
             </div>
             
-            <div className="relative animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl" />
-              <div className="relative w-full h-full min-h-[200px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative max-w-full">
+              <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-3xl" style={{ maxWidth: '100%', overflow: 'hidden' }} />
+              <div className="relative w-full h-full min-h-[150px] md:min-h-[400px] rounded-3xl shadow-2xl overflow-hidden max-w-full">
                 <Image 
                   src="/hero-fitness.jpg" 
                   alt="Elite Training" 
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover max-w-full"
+                  sizes="100vw"
                   priority
                 />
               </div>
