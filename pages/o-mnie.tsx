@@ -119,7 +119,7 @@ export default function AboutPage() {
               </p>
             </motion.div>
 
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
               <motion.div
                 key={currentImageIndex}
                 initial={{ opacity: 0 }}
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="h-96 rounded-2xl overflow-hidden shadow-lg"
+                className="h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-lg"
               >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.123456789!2d21.0827!3d52.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sgen.%20Augusta%20Emila%20Fieldorfa%20Nila%2041%2C%2004-125%20Warszawa!5e0!3m2!1spl!2spl!4v1234567890123!5m2!1spl!2spl"
