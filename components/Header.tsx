@@ -5,12 +5,10 @@ import { motion } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLanguage } from '../contexts/LanguageContext'
-import { useBooking } from '../contexts/BookingContext'
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLanguage()
-  const { setIsBookingOpen } = useBooking()
 
   const navigation = [
     { name: t('nav.home'), href: '/' },
