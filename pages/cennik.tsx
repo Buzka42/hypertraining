@@ -320,7 +320,7 @@ export default function CennikPage() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`relative glass-card p-8 ${plan.popular ? 'ring-2 ring-primary scale-105' : ''} flex flex-col h-full`}
+                  className={`relative glass-card p-8 ${plan.popular ? 'ring-2 ring-primary scale-105 card-shimmer-border' : ''} flex flex-col h-full`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">

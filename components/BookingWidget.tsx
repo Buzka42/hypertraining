@@ -49,7 +49,7 @@ const BookingWidget: React.FC = () => {
     <>
       {/* Floating Button */}
       <motion.button
-        className="fixed bottom-6 right-6 glass-card text-primary-foreground px-6 py-4 rounded-full shadow-2xl z-50 flex items-center space-x-3"
+        className="fixed bottom-6 right-6 glass-card text-primary-foreground px-6 py-3 rounded-full shadow-2xl z-50 flex items-center space-x-3 button-shimmer-border"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsBookingOpen(true)}

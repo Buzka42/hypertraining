@@ -6,7 +6,7 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center space-x-1 bg-card/30 backdrop-blur-lg rounded-xl p-1 border border-border">
+    <div className="flex items-center space-x-1 bg-card/30 backdrop-blur-lg rounded-xl p-1 border border-border button-shimmer-border">
       <button
         onClick={() => setLanguage('pl')}
         className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
@@ -19,8 +19,8 @@ export default function LanguageSwitcher() {
         <Image 
           src="/pl.png" 
           alt="Polish" 
-          width={24} 
-          height={16} 
+          width={20} 
+          height={14} 
           className="object-cover rounded-sm"
         />
       </button>
@@ -36,8 +36,8 @@ export default function LanguageSwitcher() {
         <Image 
           src="/eng.png" 
           alt="English" 
-          width={24} 
-          height={16} 
+          width={20} 
+          height={14} 
           className="object-cover rounded-sm"
         />
       </button>

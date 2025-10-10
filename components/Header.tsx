@@ -18,16 +18,15 @@ const Header: React.FC = () => {
     { name: t('nav.about'), href: '/o-mnie' },
     { name: t('nav.faq'), href: '/faq' },
     { name: t('nav.contact'), href: '/kontakt' },
-    { name: t('common.book'), href: '#', action: 'openBooking' },
   ]
 
   return (
     <header className="bg-background/70 backdrop-blur-xl border-b border-border sticky top-0 z-50 w-full max-w-full overflow-hidden">
-      <nav className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <nav className="container-fluid mx-auto">
+        <div className="flex justify-between items-center py-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-4 group">
-            <div className="relative w-12 h-12">
+          <Link href="/" className="flex items-center space-x-2 group min-w-0 flex-shrink-0">
+            <div className="relative w-10 h-10 flex-shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="HyperTraining Logo" 
@@ -35,39 +34,28 @@ const Header: React.FC = () => {
                 fill
               />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-shimmer">HyperTraining</h1>
-              <p className="text-[10px] text-muted-foreground font-light uppercase tracking-wider">PATRYK DĘBOWSKI</p>
+            <div className="min-w-0">
+              <h1 className="text-lg font-bold text-shimmer whitespace-nowrap">HyperTraining</h1>
+              <p className="text-[9px] text-muted-foreground font-light uppercase tracking-wider whitespace-nowrap">PATRYK DĘBOWSKI</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-0.5 flex-shrink flex-grow-0 justify-center">
             {navigation.map((item) => (
-              item.action === 'openBooking' ? (
-                <button
-                  key={item.name}
-                  onClick={() => setIsBookingOpen(true)}
-                  className="glass-card text-muted-foreground hover:text-foreground font-medium transition-all duration-300 relative group py-2 px-3 rounded-lg hover:bg-card/50"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
-                </button>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-foreground font-medium transition-all duration-300 relative group py-2 px-3 rounded-lg hover:bg-card/50"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
-                </Link>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground font-medium transition-all duration-300 relative group py-2 px-2 rounded-lg hover:bg-card/50 text-sm whitespace-nowrap flex-shrink-0"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+              </Link>
             ))}
           </div>
           
           {/* Language Switcher - Top Right */}
-          <div className="hidden md:block">
+          <div className="hidden md:block flex-shrink-0">
             <LanguageSwitcher />
           </div>
 
@@ -93,33 +81,15 @@ const Header: React.FC = () => {
             className="md:hidden py-4 border-t border-border"
           >
             {navigation.map((item) => (
-              item.action === 'openBooking' ? (
-                <button
-                  key={item.name}
-                  onClick={() => {
-                    setIsBookingOpen(true)
-                    setIsMenuOpen(false)
-                  }}
-                  className="glass-card block w-full text-left py-3 text-muted-foreground hover:text-foreground font-medium px-4 rounded-lg hover:bg-card/30"
-                >
-                  {item.name}
-                </button>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block py-3 text-muted-foreground hover:text-foreground font-medium px-4 rounded-lg hover:bg-card/30"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-3 text-muted-foreground hover:text-foreground font-medium px-4 rounded-lg hover:bg-card/30"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
-            
-            {/* Mobile Language Switcher */}
-            <div className="mt-4 pt-4 border-t border-border flex justify-center">
-              <LanguageSwitcher />
-            </div>
           </motion.div>
         )}
       </nav>

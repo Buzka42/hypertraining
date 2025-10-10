@@ -621,7 +621,7 @@ export const translations = {
     'home.scientific.science.title': 'Nauka o RIR a Hipertrofia',
     'home.scientific.science.1': 'Dokładne zastosowanie RIR, ułatwione przez trenera, bezpośrednio przekłada się na znacząco lepszą hipertrofię mięśniową i wyniki siłowe. Dowody naukowe są jasne: trening bliżej upadku (niższe RIR) przynosi lepsze rezultaty.',
     'home.scientific.science.2': 'Meta-regresja opublikowana w Sports Medicine w 2021 roku wykazała, że trening bliżej upadku (niższe RIR) jest bezpośrednio związany z większą hipertrofią mięśni. Chociaż dokładne odsetki różnią się w zależności od osoby, badania te potwierdzają zależność dawka-reakcja między wysiłkiem a przyrostem mięśni. Im bliżej swojego prawdziwego limitu trenujesz, tym większy jest bodziec do wzrostu mięśni.',
-    'home.scientific.conclusion': 'Dowody są jasne: praca z wykwalifikowanym trenerem personalnym, który rozumie RIR, może znacząco poprawić Twoje rezultaty budowania masy mięśniowej, zapewniając trening w optymalnej intensywności. Nie zostawiaj swoich zysków na stole - pozwól profesjonalistę poprowadzić Cię do swojego prawdziwego potencjału.',
+    'home.scientific.conclusion': 'Dowody są jasne: praca z wykwalifikowanym trenerem personalnym, który rozumie RIR, może znacząco poprawić Twoje rezultaty budowania masy mięśniowej, zapewniając trening w optymalnej intensywności. Nie zostawiaj swoich zysków na stole - pozwól profesjonaliście poprowadzić Cię do swojego prawdziwego potencjału.',
     
     'about.header.title': 'O Mnie',
     'about.header.description': 'Dowiedz się więcej o mojej historii i doświadczeniu za HyperTraining',
@@ -694,8 +694,8 @@ export const translations = {
     'home.why.science': 'Metody Oparte na Nauce',
     'home.why.science.desc': 'Wszystkie protokoły treningowe i zalecenia żywieniowe opierają się na najnowszych badaniach naukowych i fizjologii ćwiczeń, a nie tylko na trendach fitness. Zawsze będziesz wiedział, dlaczego coś robię.',
     
-    'home.why.tools.title': 'Nowoczesne Narzędzia dla Maksymalnych Rezultatów (Bez Płatności dla Klientów)',
-    'home.why.tools.description': 'Aby Twoja podróż była płynna i móc Cię kontrolować, wszyscy klienci otrzymują bezpłatny, darmowy dostęp do moich nowoczesnych zasobów cyfrowych:',
+    'home.why.tools.title': 'Nowoczesne Narzędzia dla Maksymalnych Rezultatów',
+    'home.why.tools.description': 'Aby Twoja podróż była płynna i móc Cię kontrolować, wszyscy klienci otrzymują bezpłatny dostęp do moich nowoczesnych zasobów cyfrowych:',
     
     'home.why.tools.spreadsheets': 'Online Arkusze Treningowe',
     'home.why.tools.spreadsheets.desc': 'Śledź swoje postępy, monitoruj podnoszone ciężary i uzyskaj dostęp do swojego programu w dowolnym czasie i miejscu.',

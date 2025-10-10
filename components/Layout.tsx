@@ -4,6 +4,7 @@ import Footer from './Footer'
 import BookingWidget from './BookingWidget'
 import InteractiveBackground from './InteractiveBackground'
 import { BookingProvider } from '../contexts/BookingContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -20,6 +21,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </main>
         <Footer />
         <BookingWidget />
+        {/* Floating Language Switcher - visible on mobile */}
+        <div className="md:hidden fixed bottom-6 left-6 z-50">
+          <LanguageSwitcher />
+        </div>
       </div>
     </BookingProvider>
   )
