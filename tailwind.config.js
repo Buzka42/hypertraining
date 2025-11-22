@@ -15,6 +15,11 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -50,22 +55,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-secondary': 'var(--gradient-secondary)',
-        'gradient-hero': 'var(--gradient-hero)',
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
@@ -94,6 +83,21 @@ module.exports = {
         "float-slow": "float-slow 8s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out",
+      },
+      boxShadow: {
+        'glass-hover': '0 20px 40px -15px rgba(0, 0, 0, 0.5)',
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        xl: "1.5rem", // Larger radius for bento cards
+        '2xl': '2rem',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '112': '28rem',
+        '128': '32rem',
       },
     },
   },

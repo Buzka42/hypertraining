@@ -11,7 +11,7 @@ export default function HomePage() {
   const { t } = useLanguage()
   const features = [
     t('home.features.1'),
-    t('home.features.2'), 
+    t('home.features.2'),
     t('home.features.3'),
     t('home.features.4'),
     t('home.features.5'),
@@ -44,369 +44,188 @@ export default function HomePage() {
         <meta name="keywords" content="trener personalny Warszawa, trening personalny Warszawa, trener personalny dla kobiet Warszawa, trener personalny opinie Warszawa, trener personalny fitness Warszawa, trener personalny Warszawa dla początkujących, trener personalny Warszawa redukcja wagi, trener personalny Warszawa trening indywidualny, trener personalny Warszawa plany treningowe, trener personalny Warszawa trening siłowy" />
       </Head>
 
-      {/* Hero Section - Updated to match example site */}
-      <section id="home" className="w-full overflow-x-hidden pt-16 max-w-full">
-        <div className="px-4 md:px-8 lg:px-16 py-12 md:py-24 max-w-full w-full">
-          {/* Mobile layout - single column */}
-          <div className="block lg:hidden space-y-8 max-w-full w-full">
-            <div>
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+      {/* Hero Section - Split Layout */}
+      <section id="home" className="relative w-full overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 text-left"
+            >
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
                 <span className="block">{t('home.hero.title')}</span>
-                <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
-                <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
+                <span className="text-gradient block mt-2">{t('home.hero.subtitle')}</span>
               </h1>
-            </div>
-            
-            <div>
-              <p className="text-base md:text-lg text-muted-foreground">
+
+              <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
                 {t('home.hero.description')}
               </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 w-full">
-              <Link href="/kontakt" className="btn-primary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
-                {t('home.hero.cta.primary')}
-                <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
-              </Link>
-              <Link href="/cennik" className="btn-secondary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
-                {t('home.hero.cta.secondary')}
-              </Link>
-            </div>
-            
-            <div className="flex gap-6 pt-4 w-full">
-              <div>
-                <div className="text-3xl font-bold text-shimmer">100%</div>
-                <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-shimmer">14+</div>
-                <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
-              </div>
-            </div>
-            
-            <div className="relative max-w-full mt-8 md:mt-0 w-full">
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
-              <div className="relative w-full h-full min-h-[250px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
-                <Image 
-                  src="/hero-fitness.jpg" 
-                  alt="Elite Training" 
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-          
-          {/* Desktop layout - two columns */}
-          <div className="hidden lg:grid grid-cols-2 gap-8 md:gap-12 items-center max-w-full w-full">
-            <div className="space-y-8 w-full max-w-full">
-              <div>
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                  <span className="block">{t('home.hero.title')}</span>
-                  <span className="text-shimmer block mt-2 text-2xl md:text-4xl font-bold">{t('home.hero.subtitle')}</span>
-                  <span className="block mt-2 text-xl md:text-2xl font-bold">{t('home.hero.location')}</span>
-                </h1>
-              </div>
-              
-              <div>
-                <p className="text-base md:text-lg text-muted-foreground">
-                  {t('home.hero.description')}
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <Link href="/kontakt" className="btn-primary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/kontakt" className="btn-primary px-8 py-4 text-lg">
                   {t('home.hero.cta.primary')}
-                  <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+                  <ArrowRightIcon className="ml-2 w-5 h-5" />
                 </Link>
-                <Link href="/cennik" className="btn-secondary w-full sm:w-auto px-6 md:px-8 py-3 text-sm md:text-base">
+                <Link href="/cennik" className="btn-secondary px-8 py-4 text-lg">
                   {t('home.hero.cta.secondary')}
                 </Link>
               </div>
-              
-              <div className="flex gap-6 pt-4 w-full">
+
+              <div className="flex gap-12 pt-8 opacity-80">
                 <div>
-                  <div className="text-3xl font-bold text-shimmer">100%</div>
-                  <div className="text-muted-foreground text-sm">{t('home.hero.satisfiedClients')}</div>
+                  <div className="text-4xl font-bold text-foreground">100%</div>
+                  <div className="text-muted-foreground text-sm uppercase tracking-wider mt-1">{t('home.hero.satisfiedClients')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-shimmer">14+</div>
-                  <div className="text-muted-foreground text-sm">{t('home.hero.yearsExperience')}</div>
+                  <div className="text-4xl font-bold text-foreground">14+</div>
+                  <div className="text-muted-foreground text-sm uppercase tracking-wider mt-1">{t('home.hero.yearsExperience')}</div>
                 </div>
               </div>
-            </div>
-            
-            <div className="relative max-w-full w-full">
-              <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-20 rounded-3xl max-w-full"></div>
-              <div className="relative w-full h-full min-h-[250px] md:min-h-[500px] rounded-3xl shadow-2xl overflow-hidden max-w-full" style={{ maxWidth: '100%' }}>
-                <Image 
-                  src="/hero-fitness.jpg" 
-                  alt="Elite Training" 
+            </motion.div>
+
+            {/* Right Column: Visual/Interactive */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative hidden lg:block h-[600px]"
+            >
+              {/* Hero Image */}
+              <div className="relative z-10 w-full h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-2xl group">
+                <Image
+                  src="/hero-fitness.jpg"
+                  alt="Personal Trainer Warsaw"
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Train With Me Section */}
-      <section id="why-train" className="py-24 bg-card w-full">
+      {/* Why Train With Me Section - Clean Grid */}
+      <section id="why-train" className="py-24 w-full bg-white/2">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 animate-slide-up"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-shimmer">{t('home.why.title')}</span>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="text-gradient">{t('home.why.title')}</span>
             </h2>
-            <p className="text-xl text-muted-foreground mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('home.why.subtitle')}
             </p>
-            <p className="text-lg mt-6 text-muted-foreground mx-auto">
-              {t('home.why.description')}
-            </p>
           </motion.div>
 
-          {/* Expertise Section */}
-          <div className="mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Card 1: Expertise */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 animate-slide-up"
+              whileHover={{ y: -10 }}
+              className="glass-card p-8 flex flex-col items-center text-center group"
             >
-              <h3 className="text-3xl font-bold mb-4 text-foreground">
-                {t('home.why.expertise.title')}
-              </h3>
-              <p className="text-lg text-muted-foreground mx-auto">
-                {t('home.why.expertise.description')}
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: t('home.why.hypertrophy.title'),
-                  description: t('home.why.hypertrophy.description'),
-                  icon: '/icons/Hypertrophy.png'
-                },
-                {
-                  title: t('home.why.powerlifting.title'),
-                  description: t('home.why.powerlifting.description'),
-                  icon: '/icons/Powerlifting.png'
-                },
-                {
-                  title: t('home.why.functional.title'),
-                  description: t('home.why.functional.description'),
-                  icon: '/icons/Bodybuilding.png'
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-card p-8 hover:scale-105 transition-transform duration-300 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="mb-4 flex justify-center">
-                    <Image src={item.icon} alt={item.title} width={64} height={64} className="object-contain" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-3 text-foreground text-center">{item.title}</h4>
-                  <p className="text-muted-foreground text-center">{item.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Plant-Powered Advantage */}
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="glass-card p-8 md:p-12 animate-slide-up"
-            >
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="md:w-1/3 flex justify-center">
-                  <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-full w-48 h-48 flex items-center justify-center">
-                    <Image src="/icons/PlantBasedDiet.png" alt={t('home.why.plant.title')} width={128} height={128} className="object-contain" />
-                  </div>
-                </div>
-                <div className="md:w-2/3">
-                  <h3 className="text-3xl font-bold mb-4 text-foreground">
-                    {t('home.why.plant.title')}
-                  </h3>
-                  <p className="text-lg text-muted-foreground">
-                    {t('home.why.plant.description')}
-                  </p>
-                </div>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <Image src="/icons/Hypertrophy.png" alt="Expertise" width={32} height={32} className="object-contain" />
               </div>
+              <h3 className="text-xl font-bold mb-3">{t('home.why.expertise.title')}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t('home.why.expertise.description')}</p>
             </motion.div>
-          </div>
 
-          {/* Holistic Approach */}
-          <div className="mb-20">
+            {/* Card 2: Plant Based */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 animate-slide-up"
+              whileHover={{ y: -10 }}
+              className="glass-card p-8 flex flex-col items-center text-center group"
             >
-              <h3 className="text-3xl font-bold mb-4 text-foreground">
-                {t('home.why.holistic.title')}
-              </h3>
-              <p className="text-lg text-muted-foreground mx-auto">
-                {t('home.why.holistic.description')}
-              </p>
+              <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <Image src="/icons/PlantBasedDiet.png" alt="Plant Based" width={32} height={32} className="object-contain" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('home.why.plant.title')}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t('home.why.plant.description')}</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: t('home.why.holistic.view'),
-                  description: t('home.why.holistic.view.desc'),
-                  icon: '/icons/HolisticApproach.png'
-                },
-                {
-                  title: t('home.why.personalized'),
-                  description: t('home.why.personalized.desc'),
-                  icon: '/icons/PersonalizedApproach.png'
-                },
-                {
-                  title: t('home.why.science'),
-                  description: t('home.why.science.desc'),
-                  icon: '/icons/ScienceBasedApproach.png'
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-card p-8 hover:scale-105 transition-transform duration-300 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="mb-4 flex justify-center">
-                    <Image src={item.icon} alt={item.title} width={64} height={64} className="object-contain" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-3 text-foreground text-center">{item.title}</h4>
-                  <p className="text-muted-foreground text-center">{item.description}</p>
-                </motion.div>
-              ))}
-            </div>
+            {/* Card 3: Holistic */}
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="glass-card p-8 flex flex-col items-center text-center group"
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <Image src="/icons/HolisticApproach.png" alt="Holistic Approach" width={32} height={32} className="object-contain" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('home.why.holistic.title')}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t('home.why.holistic.description')}</p>
+            </motion.div>
+
+            {/* Card 4: Modern Tools */}
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="glass-card p-8 flex flex-col items-center text-center group"
+            >
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                <Image src="/icons/Spreadsheet.png" alt="Tools" width={32} height={32} className="object-contain" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('home.why.tools.title')}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t('home.why.tools.description')}</p>
+            </motion.div>
           </div>
-
-          {/* Modern Tools */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="glass-card p-8 md:p-12 animate-slide-up"
-          >
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold mb-4 text-foreground">
-                {t('home.why.tools.title')}
-              </h3>
-              <p className="text-lg text-muted-foreground mx-auto">
-                {t('home.why.tools.description')}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: t('home.why.tools.spreadsheets'),
-                  description: t('home.why.tools.spreadsheets.desc'),
-                  icon: '/icons/Spreadsheet.png'
-                },
-                {
-                  title: t('home.why.tools.calculators'),
-                  description: t('home.why.tools.calculators.desc'),
-                  icon: '/icons/Calculators.png'
-                }
-              ].map((item, index) => (
-                <div 
-                  key={index}
-                  className="flex items-start space-x-4 p-6 bg-background/50 rounded-xl"
-                >
-                  <div className="mt-1">
-                    <Image src={item.icon} alt={item.title} width={48} height={48} className="object-contain" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 text-foreground">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* Maximize Your Gains: The Science Behind Why a Personal Trainer is Essential for RIR Accuracy */}
-      <section id="rir-science" className="py-24 bg-card w-full">
+      <section id="rir-science" className="py-24 w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 animate-slide-up"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="text-shimmer">{t('home.scientific.title')}</span>
+              <span className="text-gradient">{t('home.scientific.title')}</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mx-auto">
               {t('home.scientific.description')}
             </p>
           </motion.div>
 
-          <div className="glass-card p-4 md:p-12 max-w-full">
-            <div className="prose prose-sm md:prose-lg text-foreground min-w-[300px]">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">{t('home.scientific.intro.title')}</h3>
-              <p className="mb-4 md:mb-6">
+          <div className="glass-card p-8 md:p-12 max-w-5xl mx-auto">
+            <div className="prose prose-invert prose-lg max-w-none">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">{t('home.scientific.intro.title')}</h3>
+              <p className="mb-6 text-muted-foreground">
                 {t('home.scientific.intro.1')}
               </p>
 
-              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.novice.title')}</h3>
-              <p className="mb-4">
-                {t('home.scientific.novice.1')}
-              </p>
-              <p className="mb-4">
-                {t('home.scientific.novice.2')}
-              </p>
+              <div className="grid md:grid-cols-2 gap-8 my-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{t('home.scientific.novice.title')}</h3>
+                  <p className="mb-4 text-muted-foreground">{t('home.scientific.novice.1')}</p>
+                  <p className="text-muted-foreground">{t('home.scientific.novice.2')}</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{t('home.scientific.trainer.title')}</h3>
+                  <p className="mb-4 text-muted-foreground">{t('home.scientific.trainer.1')}</p>
+                  <p className="text-muted-foreground">{t('home.scientific.trainer.2')}</p>
+                </div>
+              </div>
 
-              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.trainer.title')}</h3>
-              <p className="mb-4">
-                {t('home.scientific.trainer.1')}
-              </p>
-              <p className="mb-4">
-                {t('home.scientific.trainer.2')}
-              </p>
-
-              <h3 className="text-xl md:text-2xl font-bold mb-4 mt-6 md:mt-8">{t('home.scientific.science.title')}</h3>
-              <p className="mb-4">
-                {t('home.scientific.science.1')}
-              </p>
-              <p className="mb-4 md:mb-6">
-                {t('home.scientific.science.2')}
-              </p>
+              <h3 className="text-xl font-bold mb-4 text-foreground">{t('home.scientific.science.title')}</h3>
+              <p className="mb-4 text-muted-foreground">{t('home.scientific.science.1')}</p>
+              <p className="mb-8 text-muted-foreground">{t('home.scientific.science.2')}</p>
 
               {/* Graph Visualization */}
-              <div className="max-w-full">
+              <div className="my-8">
                 <RIRGraphVisualization />
               </div>
 
-              <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl border border-primary/20">
-                <p className="text-center font-bold text-base md:text-lg">
+              <div className="mt-8 p-6 bg-primary/10 rounded-2xl border border-primary/20 text-center">
+                <p className="font-bold text-lg text-primary-foreground">
                   {t('home.scientific.conclusion')}
                 </p>
               </div>
@@ -416,16 +235,16 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="results" className="py-24 bg-gradient-to-b from-background to-background/50 w-full">
+      <section id="results" className="py-24 w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 animate-slide-up"
+            className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-shimmer">{t('home.testimonials.title')}</span>
+              <span className="text-gradient">{t('home.testimonials.title')}</span>
             </h2>
             <p className="text-xl text-muted-foreground mx-auto">
               {t('home.testimonials.description')}
@@ -439,17 +258,16 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-8 animate-slide-up flex flex-col h-full"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="glass-card p-8 flex flex-col h-full hover:scale-105 transition-transform duration-300"
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-lg mb-6 italic flex-grow">&quot;{testimonial.text}&quot;</p>
+                <p className="text-lg mb-6 italic flex-grow text-muted-foreground">&quot;{testimonial.text}&quot;</p>
                 <div className="border-t border-white/10 pt-4 mt-auto">
-                  <p className="font-bold text-lg">{testimonial.name}</p>
+                  <p className="font-bold text-lg text-foreground">{testimonial.name}</p>
                   <p className="text-primary font-semibold">Client Result</p>
                 </div>
               </motion.div>
@@ -459,39 +277,40 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-16 md:py-24 w-full bg-gradient-hero">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-24 w-full relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero opacity-50" />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mx-auto text-center animate-slide-up max-w-4xl"
+            className="mx-auto text-center max-w-4xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-              <span className="text-shimmer">{t('home.cta.section.title')}</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-gradient">{t('home.cta.section.title')}</span>
             </h2>
-            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-10 mx-auto max-w-2xl">
+            <p className="text-xl text-muted-foreground mb-10 mx-auto max-w-2xl">
               {t('home.cta.description')}
             </p>
-            <Link href="/kontakt" className="inline-flex items-center btn-primary text-base md:text-lg px-4 md:px-8 py-2 md:py-3 w-full sm:w-auto justify-center">
+            <Link href="/kontakt" className="btn-primary px-10 py-4 text-lg w-full sm:w-auto">
               {t('home.cta.section.button')}
-              <ArrowRightIcon className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+              <ArrowRightIcon className="ml-2 w-5 h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Section - Moved to bottom as requested */}
-      <section id="services" className="py-24 bg-card w-full">
+      {/* Services Section */}
+      <section id="services" className="py-24 w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 animate-slide-up"
+            className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-shimmer">{t('home.services.section.title')}</span>
+              <span className="text-gradient">{t('home.services.section.title')}</span>
             </h2>
             <p className="text-xl text-muted-foreground mx-auto">
               {t('home.services.section.description')}
@@ -526,11 +345,12 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-8 hover:scale-105 transition-transform duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="glass-card p-8 hover:scale-105 transition-transform duration-300"
               >
-                <div className="mb-4 flex justify-center">
-                  <Image src={service.icon} alt={service.title} width={64} height={64} className="object-contain" />
+                <div className="mb-6 flex justify-center">
+                  <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center p-4">
+                    <Image src={service.icon} alt={service.title} width={64} height={64} className="object-contain" />
+                  </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-center">{service.title}</h3>
                 <p className="text-muted-foreground text-center">{service.description}</p>
@@ -540,17 +360,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section - Moved to bottom as requested */}
-      <section id="features" className="py-24 bg-card w-full">
+      {/* Features Section */}
+      <section id="features" className="py-24 w-full">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 animate-slide-up"
+            className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-shimmer">{t('home.services.title')}</span>
+              <span className="text-gradient">{t('home.services.title')}</span>
             </h2>
             <p className="text-xl text-muted-foreground mx-auto">
               {t('home.services.description')}
@@ -564,13 +384,12 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 hover:scale-105 transition-transform duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="glass-card p-6 hover:scale-105 transition-transform duration-300 flex items-center gap-4"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="mt-1 w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full flex-shrink-0"></div>
-                  <span className="text-lg font-medium text-foreground">{feature}</span>
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-3 h-3 bg-primary rounded-full" />
                 </div>
+                <span className="text-lg font-medium text-foreground">{feature}</span>
               </motion.div>
             ))}
           </div>

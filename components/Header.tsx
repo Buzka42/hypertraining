@@ -20,38 +20,38 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-background/70 backdrop-blur-xl border-b border-border sticky top-0 z-50 w-full max-w-full overflow-hidden">
-      <nav className="container-fluid mx-auto">
-        <div className="flex justify-between items-center py-3">
+      <nav className="container mx-auto">
+        <div className="flex justify-between items-center py-3 px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group min-w-0 flex-shrink-0">
             <div className="relative w-10 h-10 flex-shrink-0">
-              <Image 
-                src="/logo.png" 
-                alt="HyperTraining Logo" 
+              <Image
+                src="/logo.png"
+                alt="HyperTraining Logo"
                 className="object-contain group-hover:scale-105 transition-transform duration-300"
                 fill
               />
             </div>
             <div className="min-w-0">
               <h1 className="text-lg font-bold text-shimmer whitespace-nowrap">HyperTraining</h1>
-              <p className="text-[9px] text-muted-foreground font-light uppercase tracking-wider whitespace-nowrap">PATRYK DĘBOWSKI</p>
+              <p className="text-[10px] text-muted-foreground font-light uppercase tracking-wider whitespace-nowrap">PATRYK DĘBOWSKI</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-0.5 flex-shrink flex-grow-0 justify-center">
+          <div className="hidden md:flex items-center space-x-1 flex-shrink flex-grow-0 justify-center">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground font-medium transition-all duration-300 relative group py-2 px-2 rounded-lg hover:bg-card/50 text-sm whitespace-nowrap flex-shrink-0"
+                className="text-muted-foreground hover:text-foreground font-medium transition-all duration-300 relative group py-2 px-4 rounded-lg hover:bg-card/50 text-sm whitespace-nowrap flex-shrink-0"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
           </div>
-          
+
           {/* Language Switcher - Top Right */}
           <div className="hidden md:block flex-shrink-0">
             <LanguageSwitcher />
