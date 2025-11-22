@@ -71,32 +71,34 @@ const RIRGraphVisualization: React.FC = () => {
     : '0';
 
   return (
-    <div className="my-10 p-6 bg-white/5 rounded-3xl border border-white/10 max-w-full backdrop-blur-sm">
-      <h3 className="text-xl font-bold mb-3 text-center text-foreground">
-        {language === 'pl'
-          ? 'Wpływ Trenera Personalnego na Zyski Mięśniowe'
-          : 'Impact of a Personal Trainer on Muscle Gains'}
-      </h3>
-      <p className="text-center text-muted-foreground mb-8 text-sm">
-        {language === 'pl'
-          ? 'Porównanie tempa zysków mięśniowych z trenerem i bez trenera'
-          : 'Comparison of muscle gain progression with and without a trainer'}
-      </p>
+    <div className="my-10 bg-white/5 rounded-3xl border border-white/10 max-w-full backdrop-blur-sm overflow-hidden">
+      <div className="p-4 md:p-6 pb-0 md:pb-0">
+        <h3 className="text-xl font-bold mb-3 text-center text-foreground">
+          {language === 'pl'
+            ? 'Wpływ Trenera Personalnego na Zyski Mięśniowe'
+            : 'Impact of a Personal Trainer on Muscle Gains'}
+        </h3>
+        <p className="text-center text-muted-foreground mb-8 text-sm">
+          {language === 'pl'
+            ? 'Porównanie tempa zysków mięśniowych z trenerem i bez trenera'
+            : 'Comparison of muscle gain progression with and without a trainer'}
+        </p>
+      </div>
 
       {/* Level Selector */}
-      <div className="flex justify-center mb-8 w-full">
-        <div className="inline-flex rounded-xl border border-white/10 p-1 bg-black/20 flex-nowrap max-w-full overflow-x-auto scrollbar-hide">
+      <div className="w-full border-y border-white/10 bg-black/20 mb-8 md:border-none md:bg-transparent md:px-6 md:flex md:justify-center">
+        <div className="flex w-full md:w-auto md:bg-black/20 md:rounded-xl md:border md:border-white/10 md:p-1">
           {(['novice', 'intermediate', 'advanced'] as const).map((level) => (
             <button
               key={level}
               onClick={() => setSelectedLevel(level)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap ${selectedLevel === level
-                ? 'bg-primary text-white shadow-lg'
+              className={`flex-1 min-w-0 px-1 py-3 md:px-4 md:py-2 text-[10px] md:text-sm font-medium transition-all duration-300 whitespace-nowrap truncate rounded-none md:rounded-lg ${selectedLevel === level
+                ? 'bg-primary text-white shadow-none md:shadow-lg'
                 : 'text-muted-foreground hover:text-foreground hover:bg-white/5'
                 }`}
             >
               {language === 'pl'
-                ? (level === 'novice' ? 'Początkujący' : level === 'intermediate' ? 'Średniozaawansowany' : 'Zaawansowany')
+                ? (level === 'novice' ? 'Początkujący' : level === 'intermediate' ? 'Średniozaaw.' : 'Zaawansowany')
                 : (level === 'novice' ? 'Novice' : level === 'intermediate' ? 'Intermediate' : 'Advanced')}
             </button>
           ))}
@@ -104,8 +106,8 @@ const RIRGraphVisualization: React.FC = () => {
       </div>
 
       {/* Graph Visualization */}
-      <div className="flex flex-col items-center w-full min-w-[300px]">
-        <div className="w-full bg-black/20 rounded-2xl border border-white/5 p-4 md:p-6">
+      <div className="p-4 md:p-6 pt-0">
+        <div className="w-full">
           {/* Chart Header */}
           <div className="flex justify-between mb-4">
             <div className="text-xs text-muted-foreground w-12"></div>
@@ -171,20 +173,20 @@ const RIRGraphVisualization: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Results Summary */}
-      <div className="mt-6 p-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl border border-primary/20 text-center backdrop-blur-md">
-        <p className="font-bold text-lg text-primary-foreground">
-          {language === 'pl'
-            ? `Zysk mięśniowy z trenerem jest o ~${improvementPercentage}% wyższy niż bez trenera`
-            : `Muscle gain with a trainer is ~${improvementPercentage}% higher than without a trainer`}
-        </p>
-        <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest opacity-70">
-          {language === 'pl'
-            ? `Poziom: ${currentData.level}`
-            : `Level: ${currentData.level}`}
-        </p>
+        {/* Results Summary */}
+        <div className="mt-6 p-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl border border-primary/20 text-center backdrop-blur-md">
+          <p className="font-bold text-lg text-primary-foreground">
+            {language === 'pl'
+              ? `Zysk mięśniowy z trenerem jest o ~${improvementPercentage}% wyższy niż bez trenera`
+              : `Muscle gain with a trainer is ~${improvementPercentage}% higher than without a trainer`}
+          </p>
+          <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest opacity-70">
+            {language === 'pl'
+              ? `Poziom: ${currentData.level}`
+              : `Level: ${currentData.level}`}
+          </p>
+        </div>
       </div>
     </div>
   );
