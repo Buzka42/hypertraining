@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://buzka42.github.io/hypertraining/sitemap.xml
+Sitemap: https://hypertraining.works/sitemap.xml
 
 # Block development files
 Disallow: /_next/

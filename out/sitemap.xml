@@ -6,7 +6,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://buzka42.github.io/hypertraining/</loc>
+    <loc>https://hypertraining.works/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- Cennik (Pricing) -->
   <url>
-    <loc>https://buzka42.github.io/hypertraining/cennik/</loc>
+    <loc>https://hypertraining.works/cennik/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
   
   <!-- Kontakt (Contact) -->
   <url>
-    <loc>https://buzka42.github.io/hypertraining/kontakt/</loc>
+    <loc>https://hypertraining.works/kontakt/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
   
   <!-- O mnie (About) -->
   <url>
-    <loc>https://buzka42.github.io/hypertraining/o-mnie/</loc>
+    <loc>https://hypertraining.works/o-mnie/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -38,7 +38,7 @@
   
   <!-- FAQ -->
   <url>
-    <loc>https://buzka42.github.io/hypertraining/faq/</loc>
+    <loc>https://hypertraining.works/faq/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
