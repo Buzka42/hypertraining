@@ -158,7 +158,7 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Scanning image placeholder */}
                     <div className="about-image relative aspect-[4/5] bg-hyper-dark border border-hyper-gray overflow-hidden group">
-                        <div className="absolute inset-0 bg-[url('/SKELETON.png')] bg-cover bg-center mix-blend-screen opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" />
+                        <div className="absolute inset-0 bg-[url('/hyperplanner/SKELETON.png')] bg-cover bg-center mix-blend-screen opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" />
                         <div className="absolute inset-0 bg-hyper-indigo mix-blend-multiply opacity-20" />
                         <div className="absolute top-0 left-0 w-full h-[2px] bg-hyper-indigo/80 shadow-[0_0_10px_#4338CA] animate-[scan_3s_ease-in-out_infinite] z-20" />
                         <div className="absolute bottom-4 right-4 bg-hyper-black/80 backdrop-blur-md border border-hyper-indigo/40 px-3 py-2 font-mono text-[10px] text-hyper-indigo flex items-center gap-2">
