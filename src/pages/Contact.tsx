@@ -53,7 +53,7 @@ const Contact = () => {
                         <Terminal size={14} /> {t('Link Komunikacyjny', 'Communication Link')}
                     </div>
                     <h1 className="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
-                        {t(<>Nawiąż <span className="text-hyper-indigo">Połączenie</span></>, <>Establish <span className="text-hyper-indigo">Connection</span></>)}
+                        {t(<>Nawiąż <span className="text-hyper-indigo">Połączenie</span><span className="sr-only"> Trener Personalny Gocław Kontakt Patryk Dębowski</span></>, <>Establish <span className="text-hyper-indigo">Connection</span><span className="sr-only"> Personal Trainer Warsaw Contact Patryk Debowski</span></>)}
                     </h1>
                     <p className="font-mono text-sm text-hyper-light/70 max-w-2xl border-l border-hyper-indigo pl-4">
                         {t(<>Czas na domysły się skończył. Prześlij parametry startowe i zainicjuj procedurę transformacji.<span className="sr-only"> Trener Personalny Gocław.</span></>, <>The time for guesswork is over. Transmit your starting parameters and initiate the transformation procedure. <span className="sr-only">Personal Trainer Warszawa Praga</span></>)}

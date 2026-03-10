@@ -52,7 +52,7 @@ const FAQ = () => {
                         <Database size={14} /> Knowledge Base
                     </div>
                     <h1 className="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6">
-                        {t(<>Baza <span className="text-hyper-indigo">Wiedzy</span></>, <>Knowledge <span className="text-hyper-indigo">Base</span></>)}
+                        {t(<>Baza <span className="text-hyper-indigo">Wiedzy</span><span className="sr-only"> Trener Personalny Warszawa Praga Południe Dębowski</span></>, <>Knowledge <span className="text-hyper-indigo">Base</span><span className="sr-only"> Personal Trainer Warsaw Praga Debowski</span></>)}
                     </h1>
                     <p className="font-mono text-sm text-hyper-light/70 max-w-2xl border-l border-hyper-indigo pl-4">
                         {t(<>Najczęściej zadawane pytania - wyczerpujące dane, minimalizujące niepewność. Przejrzyj logi przed nawiązaniem połączenia ze sprawdzonym <span className="text-hyper-light">trener personalny Gocław</span>.</>, <>Frequently asked questions - comprehensive data, minimizing uncertainty. Review the logs before establishing a link with a proven <span className="text-hyper-light">personal trainer Warszawa Praga / Gocław</span>.</>)}
